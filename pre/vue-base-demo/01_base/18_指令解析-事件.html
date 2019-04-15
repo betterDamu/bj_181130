@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .wrap{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--<button v-on:click.self="handleC">{{msg}}</button>-->
+        <div class="wrap" @click.self="handleC(msg,$event)">
+            <div class="inner">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var a=1;
+
+    Vue.config.productionTip = false
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"事件测试"
+        },
+        methods:{
+            handleC(msg,ev){
+                console.log(msg,ev)
+            }
+        }
+    })
+</script>
+</html>

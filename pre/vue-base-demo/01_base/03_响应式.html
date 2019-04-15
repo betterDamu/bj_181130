@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        {{addVal}}
+    </div>
+</body>
+<script>
+    //vue data对象的所有属性都会转绑给对应的vue实例
+    //vue中的数据都是响应式的  修改数据会引发页面的重新绘制(数据单向流)
+    //值得注意的是只有当实例被创建时 data 中存在的属性才是响应式的
+    var data = {
+        msg:"hello world"
+    }
+    var app = new Vue({
+        el:"#app",
+        data:data
+    })
+    console.log(app.msg == data.msg)
+
+
+    setTimeout(()=>{
+        app.msg="hello vue"
+    },3000)
+
+
+    app.addVal = "xxx";
+    setTimeout(()=>{
+        app.addVal="yyy"
+    },4000)
+
+</script>
+</html>

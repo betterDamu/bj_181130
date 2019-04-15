@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="../js/vue.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!--1.数据单向流（数据绑定）-->
+    <!--2.vue是个响应式框架-->
+    <style>
+        /*[v-cloak] { display: none }*/
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--<p v-pre>{{msg}}</p>-->
+    <p >{{msg}}</p>
+    <p >{{msg}}</p>
+    <p >{{msg}}</p>
+    <p >{{msg}}</p>
+    <p >{{msg}}</p>
+</div>
+
+</body>
+<script>
+    //当引入vue.js 会在全局注册一个构造函数Vue
+    var vm =  new Vue({
+        el:"#app",
+        data:{
+           /* msg:"helloWold",
+            msg2:"helloWold2"*/
+           msg:new Date()
+        }
+    })
+</script>
+</html>

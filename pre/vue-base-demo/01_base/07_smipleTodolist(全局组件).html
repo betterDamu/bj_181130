@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <!--父组件怎么向子组件传递数据
+        v-bind:
+        props属性
+    -->
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入您今天的待办事项" v-model="msg">
+        <button v-on:click="handleC">add</button>
+        <list :items="items"></list>
+    </div>
+    <div id="app2">
+        <input type="text" placeholder="请输入您今天的待办事项" v-model="msg">
+        <button v-on:click="handleC">add</button>
+        <list :items="items"></list>
+    </div>
+</body>
+<script>
+    Vue.component('list', {
+        props:["items"],
+        template: `<ul>
+            <li v-for="item in items">
+                {{item}}
+            </li>
+        </ul>`,
+    })
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            items:[]
+        },
+        methods:{
+            handleC(){
+               this.items.push(this.msg);
+               this.msg=""
+            }
+        }
+    })
+
+    var vm2 = new Vue({
+        el:"#app2",
+        data:{
+            msg:"",
+            items:[]
+        },
+        methods:{
+            handleC(){
+                this.items.push(this.msg);
+                this.msg=""
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input placeholder="请输入今天要干吗" type="text" v-model="msg"> <button v-on:click="handleClick">add</button>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            list:[]
+            // list:["吃饭","睡觉","玩晓飞"]
+        },
+        methods:{
+            handleClick:function () {
+                //this 指向vm实例对象
+                this.list.push(this.msg);
+                this.msg=""
+            }
+        }
+    })
+</script>
+</html>

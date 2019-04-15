@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{flag===true?"正确":"错误"}}
+        {{num + 1}}
+        {{new String(3)}}
+        {{a}}
+    </div>
+</body>
+<script>
+
+    var a=1;
+
+    Vue.config.productionTip = false
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            flag:true,
+            num:1
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <!--<script src="../js/vue.runtime.js"></script>-->
+
+</head>
+<body>
+    <div id="app">
+        <span>xxx</span>
+    </div>
+</body>
+<script>
+    //当引入vue.js 会在全局注册一个构造函数Vue
+   var vm =  new Vue({
+       el:"#app",
+       template:"<p>{{msg}}</p>",
+       data:{
+           msg:"helloWold",
+       }
+   })
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <!--流程控制相关的指令-->
+    <!--
+        v-if
+        v-if-else
+        v-else
+    -->
+</head>
+<body>
+    <div id="app" >
+        <div v-show="flag">
+            helloworld
+        </div>
+
+        <div v-if="num<90">
+            num<90
+        </div>
+        <div v-if-else="num<100">
+            90< num <100
+        </div>
+        <div v-else>
+           num>100
+        </div>
+    </div>
+</body>
+<script>
+    var vm =  new Vue({
+        el:"#app",
+        data:{
+            flag:false,
+            num:99
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="app" >
+        <div v-for="(item,index) in list">
+            {{index}} --- {{item.name}} --- {{item.age}} --- {{item.wife}} <button @click="delHandle(index)">del</button>
+                                                                        <button @click="updateHandle(index)">update</button>
+        </div>
+    </div>
+</body>
+<script>
+    var vm =  new Vue({
+        el:"#app",
+        data:{
+            list:[
+                {name:"damu",age:18,wife:"冬雨"},
+                {name:"xfz",age:48,wife:"李振超"},
+                {name:"张艳英",age:8,wife:"xxx"},
+                {name:"吴叶涛",age:28,wife:"凤姐"}
+            ]
+        },
+        methods:{
+            delHandle(index){
+                //splice被vue改造过的
+                this.list.splice(index,1)
+            },
+            updateHandle(index){
+                this.list.splice(index,1,{name:"周向",age:58,wife:"晓飞张"})
+                // this.list[index]={name:"周向",age:58,wife:"晓飞张"}
+                // this.list=[];
+            }
+        }
+    })
+</script>
+</html>

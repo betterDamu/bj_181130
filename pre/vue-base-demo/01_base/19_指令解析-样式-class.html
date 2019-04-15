@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        /*
+            样式相关
+                class
+                    字符串
+                    数组
+                    对象（key class名称
+                           val:布尔值）
+        */
+        .pink{
+            color: pink;
+        }
+        .big{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="app" >
+    <div :class="xfz.myClass" @click="xfz.myClass3[0].pink = !xfz.myClass3[0].pink">
+        {{xfz.name}}
+    </div>
+</div>
+</body>
+<script>
+    var vm =  new Vue({
+        el:"#app",
+        data:{
+            xfz:{
+                name:"张晓飞",
+                myClass:"pink",
+                myClass1:{pink:true},
+                myClass2:["pink","big"],
+                myClass3:[{pink:true},{big:true}]
+            }
+        }
+    })
+</script>
+</html>
