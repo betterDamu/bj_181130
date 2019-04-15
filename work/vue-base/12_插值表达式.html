@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+     <div id="app">
+        {{1+1}}  <!-- 插值表达式-->
+         {{new Date()}}
+         <!--{{a}}-->
+     </div>
+</body>
+<script>
+    var a="a";
+
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            flag:true
+        }
+    })
+</script>
+</html>
