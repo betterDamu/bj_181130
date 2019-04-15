@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script>
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        template:`<p>123</p>`,
+        data:{
+            msg:"hello world"
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script>
+    // data对象的属性都会转绑给vm实例对象
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello world"
+        }
+    })
+
+   /* vm.$on("green",function () {
+        console.log("贾乃亮1")
+    })
+    vm.$on("green",function () {
+        console.log("贾乃亮2")
+    })*/
+
+    function damu1() {
+        console.log("达姆1")
+    }
+    function damu2() {
+        console.log("达姆2")
+    }
+    vm.$on("damu",damu1)
+    vm.$on("damu",damu2)
+    setInterval(()=>{
+        vm.$emit("damu")
+        // vm.$emit("green")
+    },1000)
+
+    setTimeout(()=>{
+        vm.$off("damu",damu2)
+    },4000)
+
+</script>
+</html>
