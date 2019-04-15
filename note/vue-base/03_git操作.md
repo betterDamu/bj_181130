@@ -28,9 +28,13 @@
         git log --oneline --decorate --graph --all   
 ### 成员操作
       成员克隆项目 
-        git clone url        
-      成员创建分支跟踪远程分支(master分支不用创建)
-        git checkout -b [branch] [remotename]/[branch]
+        git clone url 
+               
+        成员创建分支跟踪远程分支(master分支不用创建)
+            git checkout -b [branch] [remotename]/[branch]
+        先建本地分支
+            git checkout -b [branch]   
+            git branch -u [remotename]/[branch]
       成员拉取数据(对应分支)
         git pull  
         

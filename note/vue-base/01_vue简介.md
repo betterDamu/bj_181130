@@ -32,13 +32,13 @@
  1.	遵循MVVM模式
   - > mvc
     <br/>  
-    ![mvvn](img/mvc.jpg)
+  ![mvc](img/mvc.jpg)
   - > mvp
     <br/>
-    ![mvp](img/mvp.jpg)
+  ![mvp](img/mvp.jpg)
   - > mvvn
     <br/>
-    ![mvvn](img/mvvn.png)   
+  ![mvvm](img/mvvn.png)   
     
     
 ## 与其它前端JS框架的关联  
