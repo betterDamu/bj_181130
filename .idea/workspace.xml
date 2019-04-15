@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26c7059d-9208-4d07-bbd6-743d45b2fc75" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/vue-base/15_指令(循环).html" beforeDir="false" afterPath="$PROJECT_DIR$/work/vue-base/15_指令(循环).html" afterDir="false" />
-    </list>
+    <list default="true" id="26c7059d-9208-4d07-bbd6-743d45b2fc75" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,17 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="15_指令(循环).html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/work/vue-base/15_指令(循环).html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -100,6 +87,19 @@
             <path>
               <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
               <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
+              <item name="pre" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-base-demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
+              <item name="pre" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-base-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="01_base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
               <item name="work" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -150,16 +150,15 @@
       <workItem from="1555294666456" duration="394000" />
       <workItem from="1555295073474" duration="507000" />
       <workItem from="1555302866189" duration="1493000" />
-      <workItem from="1555307134915" duration="9581000" />
+      <workItem from="1555307134915" duration="9832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15391000" />
+    <option name="totallyTimeSpent" value="15642000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26488096" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -486,8 +485,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/work/vue-base/15_指令(循环).html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="54" />
+        <state relative-caret-position="158">
+          <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
         </state>
       </provider>
     </entry>
