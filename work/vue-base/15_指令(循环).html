@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+     <div id="app">
+       <ul>
+           <li v-for="(item,index) in list">
+               {{index}}:{{item}}
+           </li>
+       </ul>
+
+         <ul>
+             <li v-for="(val,key,index) in obj" v-bind:key="val">
+                 {{index}}:{{key}}:{{val}}
+             </li>
+         </ul>
+     </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            list:[1,2,3,4,5,6,7],
+            obj:{
+                name:"damu",
+                age:18,
+                wife:"周冬雨",
+                son:"王思聪"
+            }
+        }
+    })
+</script>
+</html>

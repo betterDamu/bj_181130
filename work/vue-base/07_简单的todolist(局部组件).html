@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入今天要干嘛" v-model="msg">
+        <button v-on:click="handleC">add</button>
+        <todo-list v-bind:items="items"></todo-list>
+    </div>
+
+    <div id="app2">
+        <input type="text" placeholder="请输入今天要干嘛" v-model="msg">
+        <button v-on:click="handleC">add</button>
+        <todo-list v-bind:items="items"></todo-list>
+    </div>
+</body>
+<script>
+    // 1.Vue构造函数    静态方法
+    // 2.Vue的配置对象
+    //     el (根组件有  子组件不能存在)
+    //     data (根组件data可以是对象  子组件data一般都一个函数)
+    //     methods(不能使用箭头函数  this指向问题)
+    //     components
+    //     template(会覆盖el)
+    //     props
+    // 3.vm实例对象(Vue的实例对象)  实例方法
+    // 4.指令
+    //     {{}}
+    //     v-model
+    //     v-for
+    //     v-on
+    //     v-bind
+    // 5.组件!!
+
+
+
+
+    //Vue的每一个实例都是一个组件
+    var vm =  new Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            items:[]
+        },
+        methods:{
+            handleC(){
+                this.items.push(this.msg);
+                this.msg="";
+            }
+        },
+        // 局部组件
+        components:{
+            "todo-list":{
+                props:["items"],
+                template:`  <ul>
+                                <li v-for="item in items">
+                                    {{item}}
+                                </li>
+                            </ul>`
+            }
+        }
+    })
+
+    var vm =  new Vue({
+        el:"#app2",
+        data:{
+            msg:"",
+            items:[]
+        },
+        methods:{
+            handleC(){
+                this.items.push(this.msg);
+                this.msg="";
+            }
+        }
+    })
+</script>
+</html>

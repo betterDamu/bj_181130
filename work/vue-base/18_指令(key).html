@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+     <div id="app">
+        <div v-if="flag">
+            邮箱:<input type="text" v-bind:key="1">
+        </div>
+         <div v-else>
+             密码:<input type="text" v-bind:key="2">
+         </div>
+
+         <button v-on:click="flag=!flag">点我吧</button>
+     </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+          flag:true
+        }
+    })
+</script>
+</html>

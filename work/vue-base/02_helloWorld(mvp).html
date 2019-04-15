@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <div id="app">
+
+     </div>
+</body>
+<script>
+   window.onload=function () {
+
+       //通过ajax请求拿到数据
+       var data = {
+           msg:"hello world"
+       }
+
+       //静态列表
+       var appNode = document.querySelector("#app");
+       appNode.textContent = data.msg;
+
+   }
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+     <div id="app">
+      <ul>
+          <li v-for="(item,index) in arr">
+            {{index}}:--{{item.name}}----{{item.age}}----{{item.wife}}
+              <button v-on:click="handleDel(index)">del</button>
+              <button v-on:click="handleUpdate(index)">update</button>
+
+          </li>
+      </ul>
+     </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+           arr:[
+               {
+                   name:"达姆",
+                   age:18,
+                   wife:"18岁的冬雨"
+               },
+               {
+                   name:"晓飞张",
+                   age:48,
+                   wife:"刘志远"
+               },
+               {
+                   name:"张天宇",
+                   age:38,
+                   wife:"闫新宇"
+               },
+               {
+                   name:"王思聪",
+                   age:58,
+                   wife:"王健林"
+               }
+           ]
+        },
+        methods:{
+            handleDel(index){
+               this.arr.splice(index,1)
+            },
+            handleUpdate(index){
+                this.$set(this.arr,index,{
+                    name:"xxx",
+                    age:0,
+                    wife:"yyy"
+                })
+                /*this.arr.splice(index,1,{
+                    name:"xxx",
+                    age:0,
+                    wife:"yyy"
+                })*/
+                /*this.arr[index]={
+                    name:"xxx",
+                    age:0,
+                    wife:"yyy"
+                }*/
+            }
+        }
+    })
+</script>
+</html>

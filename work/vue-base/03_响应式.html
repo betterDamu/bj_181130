@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--当引入vue.js  在全局环境会注册一个Vue构造函数-->
+    <!--mvvn mvc mvp-->
+
+    <!--
+        前后端分离(mvp mvvn)
+            后端吐数据
+        服务端渲染
+            后端吐页面
+        性能比较
+            用户量比较小   服务端渲染性能比较高
+
+        toc  面向用户  (前后端分离)
+        tob  面向企业  (服务端渲染)
+    -->
+
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}  <!-- 插值表达式-->
+        {{name}}
+    </div>
+</body>
+<script>
+    // 响应式   单向数据流(model --->  view)
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello world"
+        }
+    })
+
+    console.log(vm.msg)
+    setTimeout(()=>{
+        vm.msg="hello vue";
+    },2000)
+
+
+    vm.name="老男人";
+    setTimeout(()=>{
+        vm.name="xxx"
+    },4000)
+
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="dead"></div>
+    </div>
+</body>
+<script>
+    // data对象的属性都会转绑给vm实例对象
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        template:"<span>{{msg}}</span>",
+        data:{
+            msg:"hello world"
+        }
+    })
+
+    vm.$mount("#dead")
+
+</script>
+</html>
