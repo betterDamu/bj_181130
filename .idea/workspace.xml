@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26c7059d-9208-4d07-bbd6-743d45b2fc75" name="Default" comment="" />
+    <list default="true" id="26c7059d-9208-4d07-bbd6-743d45b2fc75" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/day01.md" beforeDir="false" afterPath="$PROJECT_DIR$/day01.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,7 +15,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="day01.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day01.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="380">
+                <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="07_简单的todolist(局部组件).html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/vue-base/07_简单的todolist(局部组件).html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="28" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,6 +71,7 @@
         <option value="$PROJECT_DIR$/work/vue-base/16_指令(数组的更新检查).html" />
         <option value="$PROJECT_DIR$/work/vue-base/18_指令(key).html" />
         <option value="$PROJECT_DIR$/work/vue-base/15_指令(循环).html" />
+        <option value="$PROJECT_DIR$/day01.md" />
       </list>
     </option>
   </component>
@@ -78,24 +103,6 @@
             <path>
               <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
               <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
-              <item name="pre" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
-              <item name="pre" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-base-demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
-              <item name="pre" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-base-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="01_base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
@@ -150,15 +157,16 @@
       <workItem from="1555294666456" duration="394000" />
       <workItem from="1555295073474" duration="507000" />
       <workItem from="1555302866189" duration="1493000" />
-      <workItem from="1555307134915" duration="9832000" />
+      <workItem from="1555307134915" duration="10610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15642000" />
+    <option name="totallyTimeSpent" value="16420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26488096" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -347,23 +355,9 @@
         <state relative-caret-position="-267" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/vue-base/06_简单的todolist(组件).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/05_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/work/vue-base/07_简单的todolist(局部组件).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="15" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/work/vue-base/01_helloWorld(mvvm).html">
@@ -487,6 +481,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/06_简单的todolist(组件).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/07_简单的todolist(局部组件).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="380">
+            <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
