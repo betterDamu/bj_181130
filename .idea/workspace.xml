@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="26c7059d-9208-4d07-bbd6-743d45b2fc75" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/vue-base/15_指令(循环).html" beforeDir="false" afterPath="$PROJECT_DIR$/work/vue-base/15_指令(循环).html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="15_指令(循环).html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/vue-base/15_指令(循环).html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="308">
+              <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -54,6 +55,10 @@
         <option value="$PROJECT_DIR$/work/vue-base/12_插值表达式.html" />
         <option value="$PROJECT_DIR$/work/vue-base/13_指令(数据绑定).html" />
         <option value="$PROJECT_DIR$/work/vue-base/14_指令(分支).html" />
+        <option value="$PROJECT_DIR$/work/vue-base/16_指令(循环练习).html" />
+        <option value="$PROJECT_DIR$/work/vue-base/17_指令(对象的更新检查).html" />
+        <option value="$PROJECT_DIR$/work/vue-base/16_指令(数组的更新检查).html" />
+        <option value="$PROJECT_DIR$/work/vue-base/18_指令(key).html" />
         <option value="$PROJECT_DIR$/work/vue-base/15_指令(循环).html" />
       </list>
     </option>
@@ -86,6 +91,11 @@
             <path>
               <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
               <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bj_181130" type="462c0819:PsiDirectoryNode" />
+              <item name="pre" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bj_181130" type="b2602c69:ProjectViewProjectNode" />
@@ -140,12 +150,12 @@
       <workItem from="1555294666456" duration="394000" />
       <workItem from="1555295073474" duration="507000" />
       <workItem from="1555302866189" duration="1493000" />
-      <workItem from="1555307134915" duration="5998000" />
+      <workItem from="1555307134915" duration="9581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11808000" />
+    <option name="totallyTimeSpent" value="15391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -392,16 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/15_指令解析-循环.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/18_指令解析-事件.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-742" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/work/vue-base/12_插值表达式.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -416,6 +416,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/17_指令解析-key(循环).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/15_指令解析-循环.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/18_指令解析-事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre/vue-base-demo/01_base/16_指令解析-key(分支).html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/16_指令(循环练习).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding>
+            <element signature="e#595#642#0" />
+            <element signature="e#720#829#0" />
+            <element signature="e#843#946#0" />
+            <element signature="e#966#1072#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/76_指令(循环练习).html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/16_指令(数组的更新检查).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/17_指令(对象的更新检查).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="32" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/work/vue-base/14_指令(分支).html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -423,10 +477,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/work/vue-base/18_指令(key).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/work/vue-base/15_指令(循环).html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        <state relative-caret-position="308">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
     </entry>

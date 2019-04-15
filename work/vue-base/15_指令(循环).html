@@ -14,7 +14,7 @@
        </ul>
 
          <ul>
-             <li v-for="(val,key,index) in obj">
+             <li v-for="(val,key,index) in obj" v-bind:key="val">
                  {{index}}:{{key}}:{{val}}
              </li>
          </ul>
