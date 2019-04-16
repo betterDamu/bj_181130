@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        fistName: <input type="text" v-model="firstName" > <br>
+        lastName: <input type="text" v-model="lastName" > <br>
+        test:<input type="text" v-model="test" > <br>
+        fullName: <input type="text" v-model="fullName()"> <br>
+        <p @click="handleC">{{age}}</p>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            firstName:"t",
+            lastName:"mac",
+            test:"test",
+            age:18
+        },
+        methods:{
+            fullName(){
+                console.log("methods") // 调用2次
+                return `${this.firstName }-${this.lastName}-${this.test}`;
+            },
+            andleC(){
+                h   console.log("handleC")
+            }
+        }
+    });
+</script>
+</html>

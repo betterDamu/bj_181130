@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--模糊搜索-->
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="searchName">
+        <ul>
+            <li v-for="item in filterList">
+                {{item.name}} -- {{item.age}} -- {{item.wife}}
+            </li>
+        </ul>
+        <button @click="sortType = 1">按年龄升序</button>
+        <button @click="sortType = 2">按年龄降序</button>
+        <button @click="sortType = 0">按原本顺序</button>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            sortType:0, // 0 原本顺序  1 年龄升序   2 年龄降序
+            searchName:"",
+            list:[
+                {name:"damu1",age:19,wife:"冬雨1"},
+                {name:"damu",age:18,wife:"冬雨"},
+                {name:"damu3",age:21,wife:"冬雨3"},
+                {name:"xfz2",age:23,wife:"冬雨5"},
+                {name:"damu2",age:20,wife:"冬雨2"},
+                {name:"damu4",age:22,wife:"冬雨4"},
+            ]
+        },
+        computed:{
+            filterList(){
+               var filterList =  this.list.filter((item)=>{
+                    return item.name.includes(this.searchName)
+                });
+
+               if(this.sortType===1){
+                   filterList.sort((v1,v2)=>{
+                       return v1.age -v2.age;
+                   })
+               }else if (this.sortType===2) {
+                   filterList.sort((v1,v2)=>{
+                       return v2.age -v1.age;
+                   })
+               }
+
+
+               return filterList;
+            }
+        }
+    });
+</script>
+</html>

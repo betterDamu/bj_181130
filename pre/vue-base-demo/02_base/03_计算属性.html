@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        fistName: <input type="text" v-model="firstName" > <br>
+        lastName: <input type="text" v-model="lastName" > <br>
+        fullName: <input type="text" v-model="fullName"> <br>
+        <p>{{age}}</p>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            firstName:"t",
+            lastName:"mac",
+            age:18
+        },
+        computed:{
+            // 1. 初始化
+            // 2.关联属性产生变化的时候
+            fullName(){
+                console.log("computed")
+                return this.firstName + "-"+this.lastName
+            }
+        }
+    });
+
+    console.log(vm.$options)
+</script>
+</html>

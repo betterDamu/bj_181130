@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        fistName: <input type="text" v-model="firstName" > <br>
+        lastName: <input type="text" v-model="lastName" > <br>
+        fullName: <input type="text" v-model="fullName"> <br>
+        <p>{{age}}</p>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            firstName:"t",
+            lastName:"mac",
+            fullName:"t-mac",
+            age:18
+        },
+        watch:{
+            firstName(val){
+                console.log("-watch--firstName-")
+                this.fullName = `${val}-${this.lastName}`
+            }
+        }
+    });
+
+/*    vm.$watch("lastName",(val)=>{
+        console.log("-watch--lastName-")
+        vm.fullName = `${vm.firstName}-${val}`
+    })*/
+    vm.$watch("lastName",function(val){
+        console.log("-watch--lastName-")
+        this.fullName = `${this.firstName}-${val}`
+    })
+</script>
+</html>
