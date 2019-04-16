@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="searchName">
+        <ul>
+            <li v-for="(item,index) in filterList">
+                {{index}} --- {{item.name}} --- {{item.age}} --- {{item.wife}}
+            </li>
+        </ul>
+        <button @click="upC">按年龄升序</button>
+        <button @click="downC">按年龄降序</button>
+        <button @click="oldC">按原本顺序</button>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            searchName:"",
+            sortType:0, //sortType 0:原本顺序   1:升序  2:降序
+            list:[
+                {
+                    name:"达姆",
+                    age:181,
+                    wife:"周冬雨"
+                },
+                {
+                    name:"达姆1",
+                    age:19,
+                    wife:"周冬雨1"
+                },
+                {
+                    name:"达姆2",
+                    age:210,
+                    wife:"周冬雨2"
+                },
+                {
+                    name:"达姆3",
+                    age:21,
+                    wife:"周冬雨3"
+                },
+                {
+                    name:"达姆4",
+                    age:88,
+                    wife:"周冬雨4"
+                }
+            ]
+        },
+        methods:{
+            upC(){
+                this.sortType =1;
+            },
+            downC(){
+                this.sortType =2;
+            },
+            oldC(){
+                this.sortType =0;
+            }
+        },
+        computed:{
+            filterList(){
+               var filterList =  this.list.filter((item,index,arr)=>{
+                    return item.name.includes(this.searchName)
+                })
+
+                switch(this.sortType){
+                    case 0 :
+                       break;
+                    case 1 :
+                        filterList.sort((a,b)=>{
+                            return a.age-b.age;
+                        })
+                        break;
+                    case 2 :
+                        filterList.sort((a,b)=>{
+                            return b.age-a.age;
+                        })
+                        break;
+                }
+
+                return  filterList;
+            }
+        }
+    })
+</script>
+</html>

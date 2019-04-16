@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*sort() 方法使用in-place算法对数组的元素进行排序，并返回数组。
+//		默认排序顺序是根据字符串Unicode码点。*/
+		//参数compareFunction 可选。
+			/*
+				用来指定按某种顺序进行排列的函数。如果省略，
+				元素按照转换为的字符串的各个字符的Unicode位点进行排序。
+			*/
+		
+		//返回值：返回排序后的数组。
+		
+		//是否影响老数组： 影响 原数组已经被排序后的数组代替。
+		
+		
+		var arr =[1,2,3,4,26,16,147,28];
+		var result = arr.sort(function(a,b){
+			//从小到大
+			 return a-b;
+			//从大到小
+//			return b-a;
+		})
+		console.log(result);
+		
+		
+	</script>
+</html>
