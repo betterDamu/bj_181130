@@ -8,6 +8,14 @@
 <body>
     <div id="app">
         <p>Original message: "{{ message }}"</p>
+
+        <p>Computed reversed message: "{{ remessage}}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
         <p>Computed reversed message: "{{ remessage}}"</p>
     </div>
 </body>
@@ -22,6 +30,7 @@
         computed:{
             // 1. 初始化时被调用一次
             // 2. 修改remessage所关联的vue的响应式数据时也会被调用
+            // 3. 计算属性是会使用缓存的
             remessage(){
                 console.log("----")
                 return this.message.split("").reverse().join("")
