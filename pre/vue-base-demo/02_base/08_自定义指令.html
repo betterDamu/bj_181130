@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-focus>
+        <p v-move="1000">{{msg}}</p>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"xfz"
+        },
+        directives:{
+            focus:{
+                inserted: function (el) {
+                    el.focus()
+                }
+            },
+            move:{
+                bind:function (el,binding) {
+                    el.style.transition="2s";
+                    setTimeout(()=>{
+                        el.style.transform = `translateX(${binding.value}px)`;
+                    },2000)
+                }
+            }
+        }
+    });
+
+
+</script>
+</html>

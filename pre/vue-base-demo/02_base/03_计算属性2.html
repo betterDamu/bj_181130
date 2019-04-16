@@ -8,9 +8,7 @@
     <div id="app">
         fistName: <input type="text" v-model="firstName" > <br>
         lastName: <input type="text" v-model="lastName" > <br>
-        test:<input type="text" v-model="test" > <br>
-        fullName: <input type="text" v-model="fullName()"> <br>
-        <p @click="handleC">{{age}}</p>
+        fullName: <input type="text" v-model="fullName"> <br>
     </div>
 </body>
 <script src="./js/vue.js"></script>
@@ -20,16 +18,18 @@
         data:{
             firstName:"t",
             lastName:"mac",
-            test:"test",
             age:18
         },
-        methods:{
-            fullName(){
-                console.log("methods") // 调用2次
-                return `${this.firstName }-${this.lastName}-${this.test}`;
-            },
-            andleC(){
-                console.log("handleC")
+        computed:{
+            fullName:{
+                get:function(){
+                    return this.firstName + "-"+this.lastName
+                },
+                set(val){
+                    var arr = val.split("-");
+                    this.firstName = arr[0];
+                    this.lastName = arr[1];
+                }
             }
         }
     });

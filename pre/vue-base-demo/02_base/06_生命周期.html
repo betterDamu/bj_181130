@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./js/vue.js"></script>
+  <!--ajax请求一般在mounted是去发生  在mounted之后一般不能去修改vm.$el-->
+
+</head>
+<body>
+<div id="app">
+  <p>{{msg}}</p>
+</div>
+</body>
+<script>
+    var vm =  new Vue({
+        el:"#app",
+        data:{
+            msg:"helloWold"
+        },
+        beforeCreate:function () {
+            console.log("beforeCreate")
+        },
+        created:function () {
+            console.log("created")
+        },
+        beforeMount:function () {
+            console.log("beforeMount",this.$el)
+        },
+        mounted:function () {
+            console.log("mounted",this.$el)
+        },
+        beforeUpdate:function () {
+            console.log("beforeUpdate")
+        },
+        updated:function () {
+            console.log("updated")
+        },
+        beforeDestroy:function () {
+            console.log("beforeDestroy")
+        },
+        destroyed:function () {
+            console.log("destroyed")
+        }
+    })
+
+</script>
+</html>

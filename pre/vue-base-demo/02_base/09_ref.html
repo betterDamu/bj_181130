@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p ref="p">11111</p>
+        <button @click="handleC">测试</button>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+       methods:{
+           handleC(){
+               console.log(vm.$refs.p.innerHTML)
+           }
+       }
+    });
+
+
+</script>
+</html>
