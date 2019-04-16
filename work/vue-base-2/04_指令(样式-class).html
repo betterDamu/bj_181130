@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .hotpink{
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+      <div id="app">
+          <p :class="pClass">
+              城市套路深 我要回农村 农村路更滑 人心更复杂
+          </p>
+          <button @click="handleC">click</button>
+      </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            pClass:{
+                hotpink:false
+            }
+        },
+        methods:{
+            handleC(){
+                this.pClass.hotpink = ! this.pClass.hotpink;
+            }
+        }
+    })
+</script>
+</html>

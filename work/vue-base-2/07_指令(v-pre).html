@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+      <div id="app">
+          <p v-pre>
+              <!--静态页-->
+             {{msg}}
+          </p>
+      </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"123"
+        }
+    })
+</script>
+</html>
