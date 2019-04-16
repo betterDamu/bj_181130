@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ remessage}}"</p>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            message:"hello world"
+        },
+        computed:{
+            // 1. 初始化时被调用一次
+            // 2. 修改remessage所关联的vue的响应式数据时也会被调用
+            remessage(){
+                console.log("----")
+                return this.message.split("").reverse().join("")
+            }
+        }
+    })
+</script>
+</html>
