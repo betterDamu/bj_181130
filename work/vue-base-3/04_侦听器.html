@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        firstName:<input type="text" v-model="firstName" > <br>
+        lastName: <input type="text" v-model="lastName" > <br>
+        fullName:<input type="text" v-model="fullName" > <br>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            firstName:"T",
+            lastName:"Mac",
+            fullName:"T-Mac"
+        }
+       /* watch:{
+            firstName(newVal,oldVal){
+                this.fullName = newVal +"-"+this.lastName
+            },
+            lastName(newVal,oldVal){
+                this.fullName = this.firstName + "-" + newVal
+            }
+        }*/
+    })
+
+    vm.$watch("firstName",function (newVal,oldVal){
+        this.fullName = newVal +"-"+this.lastName
+    })
+    vm.$watch("lastName",function (newVal,oldVal){
+        this.fullName = this.firstName + "-" + newVal
+    })
+</script>
+</html>

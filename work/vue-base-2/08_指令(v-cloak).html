@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] { display: none }
+    </style>
+</head>
+<body>
+      <div id="app">
+          <!--避免闪屏   vuejs运行时渲染-->
+          <p v-cloak>
+              {{msg}}
+              {{msg}}
+              {{msg}}
+              {{msg}}
+              {{msg}}
+              {{msg}}
+          </p>
+      </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"123"
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//some() 方法测试数组中的某些元素是否通过由提供的函数实现的测试。\
+		//参数1:callback
+			/*为数组中每个元素执行的函数，该函数接收三个参数：
+				currentValue(当前值):数组中正在处理的当前元素。
+				index(索引):数组中正在处理的当前元素的索引。
+				array:forEach()方法正在操作的数组。*/
+		//参数2:thisArg
+			/*可选参数。当执行回调 函数时用作this的值。*/
+		
+		//返回值：true false
+		
+		//是否影响老数组：不影响
+		var arr =[1,2,3,4,5,6,7,8];
+		var result = arr.some(function(item,index){
+			console.log("xxx")
+			if(item > 1){
+				return true;
+			}
+		})
+		
+		console.log(result);
+		
+		
+		
+		
+	</script>
+</html>

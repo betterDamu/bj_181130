@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <button @click="handleC">干死vm</button>
+        <p v-show="flag">我是p标签</p>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            msg:"xxx",
+            flag:true
+        },
+        methods:{
+            handleC(){
+                this.$destroy()
+            }
+        },
+        mounted(){
+            this.timer = setInterval(()=>{
+                console.log("----")
+                this.flag = !this.flag
+            },100)
+        },
+        beforeDestroy(){
+            //收尾工作
+            clearInterval(this.timer)
+        }
+    })
+</script>
+</html>

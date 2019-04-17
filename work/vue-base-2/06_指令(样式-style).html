@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+      <div id="app">
+          <!--style: p标签的预定义属性-->
+          <p :style="pStyle">
+              城市套路深 我要回农村 农村路更滑 人心更复杂
+          </p>
+      </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            /*pStyle:{
+                color:"red",
+                fontSize:"50px"
+            }*/
+
+            pStyle:[{color:"red"}]
+        }
+    })
+</script>
+</html>

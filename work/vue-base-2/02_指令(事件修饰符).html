@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        #app .wrap{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+        #app .inner{
+            width: 100px;
+            height: 100px;
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+      <div id="app">
+          <div class="wrap" @click="wrapClick">
+              <div class="inner" @click.stop="innerClick">
+
+              </div>
+          </div>
+
+          <a href="http://www.atguigu.com" @click.prevent="handleC">回娘家</a>
+
+          <div class="wrap" @click.self="wrapClick">
+              <div class="inner" @click="innerClick">
+
+              </div>
+          </div>
+
+          <input type="text" @keydown.down.once ="inputClick">
+
+          <div class="wrap" @click="wrapClick2(1,$event)">
+
+          </div>
+      </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        methods:{
+            wrapClick(ev){
+                console.log("wrapClick")
+            },
+            innerClick(ev) {
+                console.log("innerClick")
+            },
+            handleC(ev){
+
+            },
+            inputClick(){
+                console.log("-----")
+            },
+            wrapClick2(msg,ev){
+                console.log(msg,ev)
+            }
+        }
+    })
+</script>
+</html>

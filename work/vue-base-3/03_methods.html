@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        firstName:<input type="text" v-model="firstName" > <br>
+        lastName: <input type="text" v-model="lastName" > <br>
+        fullName:<input type="text" v-model="fullName()" @click="handleC()"> <br>
+
+        {{test}}
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            firstName:"T",
+            lastName:"Mac",
+            test:"test"
+        },
+        methods:{
+            fullName(){
+                console.log("methods")
+                return this.firstName +"-" +this.lastName
+            },
+            handleC(){
+                console.log("----")
+            }
+
+        }
+    })
+</script>
+</html>

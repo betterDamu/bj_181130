@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+        /*
+	        forEach() 方法对数组的每个元素执行一次提供的函数。
+			参数1:callback
+					为数组中每个元素执行的函数，该函数接收三个参数：
+					currentValue(当前值):数组中正在处理的当前元素。
+					index(索引):数组中正在处理的当前元素的索引。
+					array:forEach()方法正在操作的数组。
+			参数2:thisArg
+				可选参数。当执行回调 函数时用作this的值
+			返回值：undefined
+			是否影响老数组：由callback决定
+		*/
+		
+		var arr = ["a","b","c","d","e","f","g"];
+		
+		//声明式的编程
+		// 循环认外面的arr
+		var res = arr.forEach(function(item,index,arr){
+			console.log(item)
+			//arr = [];
+		},{a:"a"})
+		
+		
+		console.log(res,arr)
+		
+	
+	</script>
+</html>

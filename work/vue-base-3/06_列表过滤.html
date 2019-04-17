@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="searchName">
+        <ul>
+            <li v-for="(item,index) in filterList">
+                {{index}} --- {{item.name}} --- {{item.age}} --- {{item.wife}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            searchName:"",
+            list:[
+                {
+                    name:"达姆",
+                    age:18,
+                    wife:"周冬雨"
+                },
+                {
+                    name:"达姆1",
+                    age:19,
+                    wife:"周冬雨1"
+                },
+                {
+                    name:"达姆2",
+                    age:20,
+                    wife:"周冬雨2"
+                },
+                {
+                    name:"达姆3",
+                    age:21,
+                    wife:"周冬雨3"
+                },
+                {
+                    name:"达姆4",
+                    age:22,
+                    wife:"周冬雨4"
+                }
+            ]
+        },
+        computed:{
+            filterList(){
+                return this.list.filter((item,index,arr)=>{
+                    return item.name.includes(this.searchName)
+                })
+            }
+        }
+    })
+</script>
+</html>
