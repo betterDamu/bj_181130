@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div ref="damu">
+            xxxx
+        </div>
+        <button @click="handleC">click</button>
+        <list ref="list"></list>
+    </div>
+</body>
+<script>
+    Vue.component("list",{
+        data(){
+            return  {
+                msg:"1234"
+            }
+        },
+        template:`<p>{{msg}}</p>`
+    })
+
+    var vm = new Vue({
+        el:"#app",
+        methods:{
+            handleC(){
+                console.log(this.$refs.list.msg)
+            }
+        }
+    })
+</script>
+</html>
