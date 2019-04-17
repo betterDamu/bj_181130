@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+
+        .counter,p{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+        p{
+            background: green;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <v-counter :fn="addTotal"  class="counter"></v-counter>
+    <v-counter :fn="addTotal" class="counter"></v-counter>
+    <p>{{total}}</p>
+</div>
+</body>
+<script>
+
+   /* 子向父传数据
+        父向子传一个函数  子调用这个函数通过参数的形式向父传递数据*/
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            total:0
+        },
+        methods:{
+            addTotal(step){
+                this.total+=step;
+            }
+        },
+        components:{
+            "v-counter":{
+                props:{
+                    fn:Function
+                },
+                data(){
+                    return {
+                        num:0
+                    }
+                },
+                template:"<div @click='handleC'>{{num}}</div>",
+                methods:{
+                    handleC(){
+                        this.num++;
+                        this.fn(1);
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>
