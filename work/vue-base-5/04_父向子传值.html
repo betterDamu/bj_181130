@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .counter{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <v-counter :counter="obj" class="counter"></v-counter>
+        <v-counter :counter="obj" class="counter"></v-counter>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            obj:{
+                num:0
+            }
+        },
+
+        /*一定不要在子组件中修改父组件直接传过来的数据
+            父组件的数据就应该在父组件中修改*/
+        components:{
+            "v-counter":{
+                props:["counter"],
+                data(){
+                  return {
+                      myCounter:this.counter.num
+                  }
+                },
+                template:"<div @click='handleC'>{{myCounter}}</div>",
+                methods:{
+                    handleC(){
+                        this.myCounter++;
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>
