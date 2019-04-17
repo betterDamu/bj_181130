@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg | dateFilter("YYYY-MM-DD")}}
+        <br>
+        {{msg | dateFilter()}}
+
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+<script>
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:new Date()
+        },
+        filters:{
+            dateFilter(val,format="YYYY-MM-DD HH:mm:ss"){
+                return moment(val).format(format);                    // 星期三
+            }
+        }
+    })
+</script>
+</html>
