@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        p{
+            display: inline-block;
+            background: pink;
+        }
+
+      /*  p{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+            width: 200px;
+            height: 30px;
+        }*/
+
+        /*拿元素初始的状态进行过渡动画*/
+        .damu-leave-active{
+            animation: move 3s;
+            transform-origin:center center ;
+        }
+
+        @keyframes move {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(2);
+            }
+        }
+
+        .damu-enter-active{
+            animation: move2 5s;
+            transform-origin:center center ;
+        }
+
+        @keyframes move2 {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">click</button>
+        <br>
+        <transition name="damu">
+            <p v-show="show">
+                陈独秀同志请坐下
+            </p>
+        </transition>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            show:true
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        /*拿元素初始的状态进行过渡动画*/
+        .damu-leave-active{
+            transition: all 5s;
+        }
+        .damu-leave-to{
+            transform: translateX(300px);
+            opacity: 0;
+            color: red;
+            font-size: 100px;
+        }
+
+
+
+        .damu-enter{
+            transform: translateX(300px);
+            opacity: 0;
+            color: red;
+        }
+       .damu-enter-active{
+           transition: all 3s;
+       }
+        .damu-enter-to{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">click</button>
+        <transition name="damu">
+            <p v-show="show">
+                陈独秀同志请坐下
+            </p>
+        </transition>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            show:true
+        }
+    })
+</script>
+</html>
