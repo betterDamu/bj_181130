@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+
+        <input type="text"  v-model="msg">
+
+        <!--<input type="text"  v-model="msg">-->
+        <!--<textarea v-model="msg" placeholder="add multiple lines"></textarea>-->
+
+        <!--<input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>-->
+
+       <!-- <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>-->
+
+        <!--<input type="radio" id="one" value="One" v-model="picked">
+        <label for="one">One</label>
+        <br>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two">Two</label>
+        <br>
+        <input type="radio" id="three" value="Three" v-model="picked">
+        <label for="two">Three</label>
+        <br>
+        <span>Picked: {{ picked }}</span>-->
+
+        <!--<select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>-->
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"message",
+            checked:true,
+            checkedNames:["Jack","Mike"],
+            picked:"One",
+            selected:"b"
+        }
+    })
+</script>
+</html>

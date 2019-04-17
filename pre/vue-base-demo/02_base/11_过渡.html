@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .v-enter-active {
+            transition: all 5s ease;
+        }
+       .v-leave-active {
+            transition: all 5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+       .v-enter, .v-leave-to{
+            transform: translateX(100px);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="example-1">
+        <button @click="show = !show">
+            Toggle render
+        </button>
+        <transition>
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#example-1',
+        data: {
+            show: true
+        }
+    })
+</script>
+</html>

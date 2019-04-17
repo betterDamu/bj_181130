@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_ref属性-1</title>
+</head>
+<body>
+<div id="app">
+    <to-do-list>
+        <template slot-scope="slotProps">
+            🐱 {{slotProps.item}}
+        </template>
+    </to-do-list>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+    var toDoList={
+        template:`
+               <ul>
+                    <li v-for="item in list">
+                        <slot :item="item">
+                            {{item}}
+                        </slot>
+                    </li>
+                </ul>
+        `,
+        data(){
+            return {
+                list:["xx-1","xx-2","xx-3","xx-4"]
+            }
+        }
+
+    }
+
+   new Vue({
+       el:"#app",
+       components:{
+           toDoList
+       }
+   })
+
+</script>
+</html>

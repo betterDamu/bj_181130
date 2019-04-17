@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_组件的使用细节-2</title>
+    <!--
+        在非根组件中data的定义必须是一个函数
+            函数返回的对象才是真正意义上数据的存储仓库(data)
+
+            这样设计的目的是为了让每个组件间的数据都是独立的 互不影响
+    -->
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr is="row"></tr>
+        </table>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+   Vue.component("Row",{
+       template:`<tr><td>{{message}}</td></tr>`,
+       data(){
+           return {
+               message:"组件"
+           }
+       }
+   });
+
+
+   new Vue({
+       el:"#app"
+   })
+</script>
+</html>

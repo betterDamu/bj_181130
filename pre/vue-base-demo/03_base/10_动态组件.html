@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_ref属性-1</title>
+</head>
+<body>
+    <div id="app">
+        <component :is="type"></component>
+        <button @click="handleC">switch</button>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+    Vue.component("child1",{
+        template:"<p v-once>yyyy1</p>"
+    })
+    Vue.component("child2",{
+        template:"<p v-once>yyyy2</p>"
+    })
+
+    new Vue({
+        el:"#app",
+        data:{
+            type:"child1"
+        },
+        methods:{
+            handleC(){
+                this.type = this.type==="child1"?"child2":"child1"
+            }
+        }
+    })
+
+</script>
+</html>

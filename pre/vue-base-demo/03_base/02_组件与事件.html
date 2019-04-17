@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_ref属性-1</title>
+    <!--
+       组件上的所有事件都是vue自定义事件
+    -->
+</head>
+<body>
+<div id="app">
+    <counter @click="handleC"></counter>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+    Vue.component("counter",{
+        template:`<p @click="handleC">{{number}}</p> `,
+        data(){
+            return {
+                number:0
+            }
+        },
+        methods:{
+            handleC(){
+                console.log("counter - handleC");
+                // this.$emit("click")
+            }
+        }
+    })
+
+    var app = new Vue({
+        el:"#app",
+        methods:{
+            handleC(){
+                console.log("root - handleC")
+            }
+        }
+    })
+</script>
+</html>

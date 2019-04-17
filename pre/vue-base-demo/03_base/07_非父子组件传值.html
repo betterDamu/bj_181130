@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--使用总线机制-->
+    <!--发布者 订阅者模式-->
+    <!--观察者模式-->
+</head>
+<body>
+    <div id="app">
+        <child :msg="name1"></child>
+        <child :msg="name2"></child>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    var child={
+        props:["msg"],
+        data(){
+          return{
+              selfmsg:this.msg
+          }
+        },
+        template:`<p @click="handleC">{{selfmsg}}</p>`,
+        methods:{
+            handleC(){
+                this.bus.$emit("change",this.selfmsg)
+            }
+        },
+        mounted(){
+            this.bus.$on("change",(selfmsg) => {
+                this.selfmsg = selfmsg;
+            })
+        }
+    }
+
+    Vue.prototype.bus = new Vue();
+    var app = new Vue({
+        el:"#app",
+        data:{
+            name1:"damu",
+            name2:"xfz"
+        },
+        components:{
+            child
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_组件的使用细节-1</title>
+    <!--
+        当组件的嵌套与Html5的规范产生冲突时我们可以使用is属性来解决冲突
+
+        H5规范中部分标签的嵌套是有强约束的，部分标签内部不能嵌套其他标签
+                table内一般只能嵌套tr，组件本质是就是一个自定义标签。我们不能让table不认识的标签
+                出现在table内部。vue的is属性就可以帮我们解决这个问题。
+                                                 <tr is="row"></tr>
+    -->
+
+    <!--
+        ul li
+        ol li
+        select option
+        table tr
+    -->
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr is="row"></tr>
+        </table>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+    var row = {
+        template:`<tr>
+               <td>1-1</td>
+               <td>1-2</td>
+           </tr>`
+    }
+
+   new Vue({
+       el:"#app",
+       components:{
+           row
+       }
+   })
+</script>
+</html>

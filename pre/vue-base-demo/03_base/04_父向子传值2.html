@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_ref属性-1</title>
+
+   <!--
+    1. 通过标签属性传值
+    2. 如果子组件的props接收了 那这个标签属性就具有props特性
+    3. 如果子组件的props没有接收 那这个标签属性就是一个普通的自定义属性
+    -->
+
+
+    <!--
+       父组件如何向子组件传值
+           父组件通过标签属性的形式向子组件传值。
+           子组件可以通过props属性正常接收到来自父组件的值。
+           但值得注意的是 子组件接收到父组件的值后不应该修改接收到的值，
+               因为该值果然是一个对象，而且被几个子组件共同引用着。那很有可能会导致脏数据
+
+               非得改这数据，应该怎么办？
+                   转存一份，再改
+
+          在vue中组件间传值是要单向数据流的,子组件不能随意修改来着父组件的值。
+   -->
+    <style>
+        .count,p{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            border-radius: 50% ;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <counter :number="number" xxx="xxx"  yyy="yyy" class="count"></counter>
+    <counter :number="number"></counter>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+    var counter={
+       /* 具有props特性
+                用完就干掉
+                在子组件使用起来像data中的数据*/
+        props:["number"],
+        data(){
+          return{
+              count:this.number.val
+          }
+        },
+        template:`<p @click="handleC">{{count}}</p>`,
+        methods:{
+            handleC(){
+                this.count ++;
+            }
+        }
+    }
+
+    var app = new Vue({
+        el:"#app",
+        data:{
+            damu:"达姆22",
+            number:{val:0}
+        },
+        components:{
+            counter
+        }
+    })
+
+</script>
+</html>

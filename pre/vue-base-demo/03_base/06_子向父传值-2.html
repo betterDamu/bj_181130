@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_ref属性-1</title>
+    <!--
+       1.子向父传值的方式
+            父亲向儿子传一个props  这个props是一个函数
+    -->
+    <style>
+        .count,p{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            border-radius: 50% ;
+            line-height: 100px;
+            text-align: center;
+        }
+        p{
+            background: green;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <counter class="count" @change="fatherCount" :number="0"></counter>
+    <counter class="count" @change="fatherCount" :number="0"></counter>
+    <p>{{total}}</p>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+    var counter={
+        props:["number"],
+        template:`<p @click="handleC">{{count}}</p>`,
+        data(){
+            return{
+                count:this.number
+            }
+        },
+        methods:{
+            handleC(){
+                this.count+=2;
+                this.$emit("change",2)
+            }
+        }
+    }
+
+    var app = new Vue({
+        el:"#app",
+        data:{
+            total:0
+        },
+        components:{
+            counter
+        },
+        methods:{
+            fatherCount(step){
+                this.total += step;
+            }
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--如何定义组件-->
+    <!--
+        全局组件
+            Vue.component("name",{});
+        局部组件
+            配置对象中的components属性
+                components:{
+                    key(组件名):val(组件对象)
+                }
+
+        组件名称：
+                  定义时：每个单词的首字母都要大写(首字母小写)
+                  使用时：用-连接符来连接
+   -->
+</head>
+<body>
+    <div id="app">
+        <damu-button></damu-button>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script type="application/javascript">
+    /*Vue.component("damuButton",{
+        template:"<button @click='handleC'>{{msg}}</button>",
+        data(){
+            return {
+                msg:"message"
+            }
+        },
+        methods:{
+            handleC(){
+                console.log("damuButton")
+            }
+        }
+    })*/
+
+    var damuButton = {
+        template:"<button @click='handleC'>{{msg}}</button>",
+        data(){
+            return {
+                msg:"message"
+            }
+        },
+        methods:{
+            handleC(){
+                console.log("damuButton")
+            }
+        }
+    }
+
+    var vm = new Vue({
+        el:"#app",
+        components:{
+            damuButton
+        }
+    })
+</script>
+</html>

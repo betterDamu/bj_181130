@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_ref属性-1</title>
+</head>
+<body>
+<div id="app">
+    <child>
+        <foot-down slot="up"></foot-down>
+        <head-up slot="down"></head-up>
+    </child>
+</div>
+</body>
+<script src="componet/foot.js"></script>
+<script src="componet/head.js"></script>
+<script src="js/vue.js"></script>
+<script type="application/javascript">
+
+
+
+    var child={
+        template:`<div>
+                       <slot name="up">xxx</slot>
+                       <p>吴叶涛</p>
+                       <slot name="down">xxx</slot>
+                    </div> `,
+    }
+
+    var app = new Vue({
+        el:"#app",
+        components:{
+            child,
+            footDown,
+            headUp
+        }
+    })
+
+</script>
+</html>
