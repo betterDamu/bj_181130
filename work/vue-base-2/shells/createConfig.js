@@ -48,7 +48,7 @@ module.exports = (config, target = { chrome: 52, firefox: 48 }) => {
           test: /\.css$/,
           use: [
             'vue-style-loader',
-            'css-loader',
+            'css-extend-loader',
             'postcss-loader'
           ]
         },
@@ -56,7 +56,7 @@ module.exports = (config, target = { chrome: 52, firefox: 48 }) => {
           test: /\.styl(us)?$/,
           use: [
             'vue-style-loader',
-            'css-loader',
+            'css-extend-loader',
             'postcss-loader',
             'stylus-loader',
             {

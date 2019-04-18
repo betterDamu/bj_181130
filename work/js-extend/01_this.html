@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //函数的内部特征 this,arguments
+    function test(){
+        console.log(this);
+    }
+
+    var obj={
+        name:"obj",
+        test:test
+    }
+
+    test();
+    obj.test();
+    test.call({x:"x"})
+    test.apply({y:"y"})
+    new test
+
+
+
+    //函数的属性  length
+    //console.log(test.length)
+
+    //函数的方法  call apply bind
+
+
+
+  /*  函数的调用形式  (ecma  dom bom)
+        1. 普通调用  test()                               this--> window
+        2. 隐式调用  obj.test()                           this--> 调用者
+        3. 构造调用  new test()                           this-->new 出来的实例
+        4  显示调用  test.call(obj)  test.apply(obj)      this-->指定对象(call 和 apply的第一个参数)
+    */
+
+
+</script>
+</html>

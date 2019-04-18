@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // document.write("xxx");
+
+    //隐式丢失   我们以对象点的形式进行函数的传递  可是最终  却以其他方式来调用函数
+    /*var fn = document.write;
+    fn("xxx");*/
+
+    //硬绑定
+    var fn = document.write.bind(document)
+    //硬绑定过后的函数  this指向不会再发生改变!!!
+    fn("xxx");
+
+
+
+
+
+
+
+    /*function setTimeout(fn.time){
+        fn();
+    }*/
+    function test(){
+        console.log(this);
+    }
+
+    var obj={
+        name:"obj",
+        test:test
+    }
+    setTimeout(obj.test.bind(obj),2000);
+
+</script>
+</html>

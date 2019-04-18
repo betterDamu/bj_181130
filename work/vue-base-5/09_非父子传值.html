@@ -6,12 +6,11 @@
     <script src="./js/vue.js"></script>
 </head>
 <body>
-<div id="app">
-    <v-clild msg="damu"></v-clild>
-    <v-clild msg="xfz"></v-clild>
-    <v-clild msg="xfz2"></v-clild>
-
-</div>
+    <div id="app">
+        <v-clild msg="damu"></v-clild>
+        <v-clild msg="xfz"></v-clild>
+        <v-clild msg="xfz2"></v-clild>
+    </div>
 </body>
 <script>
 
@@ -32,14 +31,28 @@
             }
         },
         mounted(){
+            var me =this;
+            this.bus.$on("change", function (msg) {
+                me.myMsg = msg;
+            })
+        }
+       /* mounted(){
+            this.bus.$on("change", function (msg) {
+                this.myMsg = msg;
+            }.bind(this))
+        }*/
+        /*mounted(){
             this.bus.$on("change", (msg)=> {
                 this.myMsg = msg;
             })
-        }
+        }*/
     }
 
     Vue.config.productionTip=false;
     Vue.prototype.bus = new Vue();
+
+
+
     var vm = new Vue({
         el:"#app",
         components:{
