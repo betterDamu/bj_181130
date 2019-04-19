@@ -1,12 +1,39 @@
 <template>
   <div class="todo-header">
-    <input type="text" placeholder="请输入你的任务名称，按回车键确认"/>
+    <input type="text" placeholder="请输入你的任务名称，按回车键确认" v-model.trim="text" @keyup.enter="handleKeyUp"/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+    var id = 10;
     export default {
-        name: "todo-header"
+        name: "todo-header",
+        data(){
+          return {
+            text:""
+          }
+        },
+        methods:{
+          handleKeyUp(){
+            //判断输入的文本是不是空白字符 空格
+            if(this.text === ""){
+              alert("请输入一些数据");
+              return;
+            }
+            //构建一个todo对象
+            const todo ={
+              id: id++,
+              text:this.text,
+              completed:false
+            }
+
+            // 往 app.vue组件的todos中加一个todo对象
+            this.$emit("addToDo",todo)
+
+            //情况输入框
+            this.text = "";
+          }
+        }
     }
 </script>
 

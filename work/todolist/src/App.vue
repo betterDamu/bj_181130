@@ -2,7 +2,7 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <todo-header></todo-header>
+        <todo-header @addToDo="addTodo"></todo-header>
         <todo-list :todos="todos"></todo-list>
         <todo-footer></todo-footer>
       </div>
@@ -45,6 +45,11 @@
             completed:false
           }
         ]
+      }
+    },
+    methods:{
+      addTodo(todo){
+        this.todos.unshift(todo)
       }
     },
     components:{

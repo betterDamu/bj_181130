@@ -9,21 +9,26 @@
   4. vue init webpack 项目名
 
 # vue 模板
-  <template>
-  #[[$END$]]#
-  </template>
+<template>
+#[[$END$]]#
+</template>
+
+<script type="text/ecmascript-6">
+export default {
+  name: "${COMPONENT_NAME}"
+}
+</script>
+
+<style  scoped>
+
+</style>
   
-  <script type="text/ecmascript-6">
-    export default {
-      name: "${COMPONENT_NAME}"
-    }
-  </script>
-  
-  <style  scoped>
-  
-  </style>
-  
-  
+## todolist 数据传递
+    因为footer.vue header.vue list.vue 都有使用todos数据  
+    所以todos数据应该放在App.vue中进行定义
+    1.  app.vue --todos--> list.vue --todo--> item.vue
+    2.  header.vue --新构建的todo对象--> app.vue
+              事件的形式
   
 ## Build Setup
 
