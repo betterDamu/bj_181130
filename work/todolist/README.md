@@ -7,6 +7,23 @@
   2. vue -V 
   3. vue list 查看对应的模板类型
   4. vue init webpack 项目名
+
+# vue 模板
+  <template>
+  #[[$END$]]#
+  </template>
+  
+  <script type="text/ecmascript-6">
+    export default {
+      name: "${COMPONENT_NAME}"
+    }
+  </script>
+  
+  <style  scoped>
+  
+  </style>
+  
+  
   
 ## Build Setup
 
