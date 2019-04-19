@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "pubsub-js": "^1.7.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {

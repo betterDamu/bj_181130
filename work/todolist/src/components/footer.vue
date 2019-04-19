@@ -1,10 +1,11 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input type="checkbox"/>
+      <input type="checkbox" v-model="selectAll" />
     </label>
     <span>
-          <span>已完成0</span> / 全部2
+          <span>已完成 <i style="color:red;font-size: 20px">{{completedCount}}</i> </span>
+          ; 全部 <i style="color:green;font-size: 20px">{{todos.length}}</i>
         </span>
     <button class="btn btn-danger">清除已完成任务</button>
   </div>
@@ -12,7 +13,21 @@
 
 <script type="text/ecmascript-6">
     export default {
-        name: "todo-footer"
+        name: "todo-footer",
+        props:{
+          todos:Array
+        },
+        computed:{
+          completedCount(){
+            return this.todos.reduce((adder,item)=>{
+                var val = item.completed?1:0;
+                return adder + val;
+            },0)
+          },
+          selectAll(){
+              return this.completedCount === this.todos.length
+          }
+        }
     }
 </script>
 

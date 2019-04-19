@@ -3,8 +3,8 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <todo-header @addToDo="addTodo"></todo-header>
-        <todo-list :todos="todos" @deleteTodo="deleteTodo"></todo-list>
-        <todo-footer></todo-footer>
+        <todo-list :todos="todos" ></todo-list>
+        <todo-footer :todos="todos"></todo-footer>
       </div>
     </div>
   </div>
@@ -14,6 +14,7 @@
   import header from "./components/header"
   import list from "./components/list"
   import footer from "./components/footer"
+  import PubSub from "pubsub-js";
   export default {
     name: 'App',
     data(){
@@ -50,17 +51,19 @@
     methods:{
       addTodo(todo){
         this.todos.unshift(todo)
-      },
-      deleteTodo(id){
-        this.todos = this.todos.filter((item,index,arr)=>{
-          return item.id !== id
-        })
       }
     },
     components:{
       "todo-header":header,
       "todo-list":list,
       "todo-footer":footer
+    },
+    mounted(){
+      var token = PubSub.subscribe('deleteTodo', (msg, id)=> {
+          this.todos = this.todos.filter((item)=>{
+            return item.id !== id;
+          })
+      });
     }
   }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <ul class="todo-main">
-    <todo-item v-for="todo in todos"  :todo="todo" :key="todo.id" @deleteTodo="deleteTodo"></todo-item>
+    <todo-item v-for="todo in todos"  :todo="todo" :key="todo.id" ></todo-item>
   </ul>
 </template>
 
@@ -13,11 +13,6 @@
         },
         components:{
           "todo-item":item
-        },
-        methods:{
-          deleteTodo(id){
-            this.$emit("deleteTodo",id)
-          }
         }
     }
 </script>

@@ -4,11 +4,12 @@
       <input type="checkbox" v-model="todo.completed" />
       <span>{{todo.text}}</span>
     </label>
-    <button class="btn btn-danger" v-show="isShow" @click="deleteTodo">删除</button>
+    <button class="btn btn-danger" v-show="isShow" @click="handleC">删除</button>
   </li>
 </template>
 
 <script type="text/ecmascript-6">
+    import PubSub from "pubsub-js";
     export default {
         name: "todo-item",
         data(){
@@ -20,8 +21,8 @@
           todo:Object
         },
         methods:{
-          deleteTodo(){
-              this.$emit("deleteTodo",this.todo.id)
+          handleC(){
+            PubSub.publish('deleteTodo', this.todo.id);
           }
         }
     }

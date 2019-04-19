@@ -38,8 +38,20 @@ export default {
     因为footer.vue header.vue list.vue 都有使用todos数据  
     所以todos数据应该放在App.vue中进行定义
     1.  app.vue --todos--> list.vue --todo--> item.vue
+              初始化渲染
+              父向子   props
     2.  header.vue --新构建的todo对象--> app.vue
-              事件的形式
+              头部的添加功能
+              子向父   事件的形式   (props 父组件主动 自己练)
+    3.     item的删除功能 
+              孙向爷  
+                -   list.vue  --index-->  item.vue --index--> list.vue  --index-->  app.vue    
+                      子向父   事件的形式   (props 父组件主动 自己练)
+                -   item.vue --id--> list.vue  --id-->  app.vue       
+                      子向父   事件的形式   (props 父组件主动 自己练)
+                -    item.vue  --id-->  app.vue       
+                      pubsub (总线 自己练)
+                  
   
 ## Build Setup
 
