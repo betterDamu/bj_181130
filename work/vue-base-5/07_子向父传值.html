@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+
+        .counter,p{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+        p{
+            background: green;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <v-counter @counter="addTotal"  class="counter"></v-counter>
+    <v-counter @counter="addTotal" class="counter"></v-counter>
+    <p>{{total}}</p>
+</div>
+</body>
+<script>
+
+   /* 子向父传数据
+        给子组件绑定一个vue自定义事件  可是回调是定义在父组件中
+        当子组件触发事件时  对应父组件中的回调就会被调用
+
+        子向父传值还是通过回调的参数来传
+       */
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            total:0
+        },
+        methods:{
+            addTotal(step){
+                this.total+=step;
+            }
+        },
+        components:{
+            "v-counter":{
+                data(){
+                    return {
+                        num:0
+                    }
+                },
+                template:"<div @click='handleC'>{{num}}</div>",
+                methods:{
+                    handleC(){
+                        this.num++;
+                        this.$emit("counter",1)
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>

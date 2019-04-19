@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <v-clild msg="damu"></v-clild>
+    <v-clild msg="xfz"></v-clild>
+    <v-clild msg="xfz2"></v-clild>
+</div>
+</body>
+<script>
+
+    //总线模式
+    var child={
+        props:{
+          msg:String
+        },
+        template:"<div @click='handleC'>{{msg}}</div>",
+        methods:{
+            handleC(){
+                this.bus.$emit("change",this.msg)
+            }
+        },
+        mounted(){
+            this.bus.$on("change", (msg)=> {
+                this.msg = msg;
+            })
+        }
+    }
+
+    Vue.config.productionTip=false;
+    Vue.prototype.bus = new Vue();
+    var vm = new Vue({
+        el:"#app",
+        components:{
+            "v-clild":child
+        }
+    })
+</script>
+</html>

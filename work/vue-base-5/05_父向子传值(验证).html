@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .counter{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <v-counter :counter="obj"  class="counter"></v-counter>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            obj:{
+                app:"app"
+            }
+        },
+        components:{
+            "v-counter":{
+                props:{
+                    counter:Object
+                   /* counter:{
+                        type: Object,
+                        required: false,
+                        default(){
+                            return {
+                                x:"x"
+                            }
+                        },
+                        validator: function (value) {
+                           return false
+                        }
+                    }*/
+                },
+                template:"<div>{{counter}}</div>",
+            }
+        }
+    })
+</script>
+</html>

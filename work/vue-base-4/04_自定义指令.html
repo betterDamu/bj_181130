@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-move="100">damu</div>
+    </div>
+</body>
+<script>
+
+
+    var vm = new Vue({
+        el:"#app",
+        directives: {
+            move: {
+                bind: function (el,binding) {
+                    console.log(binding)
+                    el.style.transition="3s";
+                    setTimeout(()=>{
+                        el.style.transform=`translateX(${binding.value}px)`;
+                    },1000)
+                }
+            }
+        }
+    })
+</script>
+</html>

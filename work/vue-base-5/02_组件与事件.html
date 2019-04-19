@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--在组件上绑定的所有事件都是vue的自定义事件
+
+            atguigu-damu.$on("click",fn)
+            atguigu-damu.$emit("click")
+        -->
+       <atguigu-damu @click="handleC"></atguigu-damu>
+    </div>
+</body>
+<script>
+
+    Vue.component("atguigu-damu",{
+        template:`
+             <div @click="handleC" style="background: pink">
+                <span>span1</span>
+                <span>span2</span>
+            </div>
+         `,
+        methods:{
+            handleC(){
+                this.$emit("click")
+            }
+        }
+    })
+
+    // 声明式编程
+    var vm = new Vue({
+        el:"#app",
+        methods:{
+            handleC(){
+                console.log("app - handleC")
+            }
+        }
+    })
+</script>
+</html>

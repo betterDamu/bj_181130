@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*所有绝对定位的盒子特性
+            1.横向上
+            width + padding + border-width + margin + left + right = 包含块的宽度
+             auto      0            0        auto    auto      auto     = 视口的宽度*/
+
+
+
+        #app{
+            width: 200px;
+            height: 200px;
+            background: pink;
+
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+</body>
+</html>
