@@ -3,7 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <todo-header @addToDo="addTodo"></todo-header>
-        <todo-list :todos="todos"></todo-list>
+        <todo-list :todos="todos" @deleteTodo="deleteTodo"></todo-list>
         <todo-footer></todo-footer>
       </div>
     </div>
@@ -50,6 +50,11 @@
     methods:{
       addTodo(todo){
         this.todos.unshift(todo)
+      },
+      deleteTodo(id){
+        this.todos = this.todos.filter((item,index,arr)=>{
+          return item.id !== id
+        })
       }
     },
     components:{
