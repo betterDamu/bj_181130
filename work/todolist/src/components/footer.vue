@@ -7,7 +7,7 @@
           <span>已完成 <i style="color:red;font-size: 20px">{{completedCount}}</i> </span>
           ; 全部 <i style="color:green;font-size: 20px">{{todos.length}}</i>
         </span>
-    <button class="btn btn-danger">清除已完成任务</button>
+    <button class="btn btn-danger" v-show="completedCount" @click="clearCompleted">清除已完成任务</button>
   </div>
 </template>
 
@@ -24,8 +24,18 @@
                 return adder + val;
             },0)
           },
-          selectAll(){
-              return this.completedCount === this.todos.length
+          selectAll:{
+            get(){
+              return (this.completedCount === this.todos.length )&&(this.todos.length)
+            },
+            set(val){
+              this.$emit("sellectAll",val)
+            }
+          }
+        },
+        methods:{
+          clearCompleted(){
+            this.$emit("clearCompleted");
           }
         }
     }

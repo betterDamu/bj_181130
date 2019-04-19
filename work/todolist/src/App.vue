@@ -4,7 +4,7 @@
       <div class="todo-wrap">
         <todo-header @addToDo="addTodo"></todo-header>
         <todo-list :todos="todos" ></todo-list>
-        <todo-footer :todos="todos"></todo-footer>
+        <todo-footer :todos="todos" @sellectAll="sellectAll" @clearCompleted="clearCompleted"></todo-footer>
       </div>
     </div>
   </div>
@@ -51,6 +51,16 @@
     methods:{
       addTodo(todo){
         this.todos.unshift(todo)
+      },
+      sellectAll(flag){
+        this.todos.forEach((item)=>{
+          item.completed = flag;
+        })
+      },
+      clearCompleted(){
+        this.todos = this.todos.filter((item)=>{
+          return  !item.completed;
+        })
       }
     },
     components:{

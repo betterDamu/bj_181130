@@ -43,7 +43,7 @@ export default {
     2.  header.vue --新构建的todo对象--> app.vue
               头部的添加功能
               子向父   事件的形式   (props 父组件主动 自己练)
-    3.     item的删除功能 
+    3. item的删除功能 
               孙向爷  
                 -   list.vue  --index-->  item.vue --index--> list.vue  --index-->  app.vue    
                       子向父   事件的形式   (props 父组件主动 自己练)
@@ -51,6 +51,9 @@ export default {
                       子向父   事件的形式   (props 父组件主动 自己练)
                 -    item.vue  --id-->  app.vue       
                       pubsub (总线 自己练)
+    4.  footer.vue --val--> app.vue
+        全选全不选
+            子向父    事件的形式   (props 父组件主动 自己练)                  
                   
   
 ## Build Setup
