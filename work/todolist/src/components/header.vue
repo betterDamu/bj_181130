@@ -13,6 +13,9 @@
             text:""
           }
         },
+        props:{
+          addTodo:Function
+        },
         methods:{
           handleKeyUp(){
             //判断输入的文本是不是空白字符 空格
@@ -28,7 +31,8 @@
             }
 
             // 往 app.vue组件的todos中加一个todo对象
-            this.$emit("addToDo",todo)
+            //this.$emit("addToDo",todo)
+            this.addTodo(todo)
 
             //情况输入框
             this.text = "";

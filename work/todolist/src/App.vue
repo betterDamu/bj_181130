@@ -2,7 +2,7 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <todo-header @addToDo="addTodo"></todo-header>
+        <todo-header :addTodo="addTodo"></todo-header>
         <todo-list :todos="todos" ></todo-list>
         <todo-footer :todos="todos" @sellectAll="sellectAll" @clearCompleted="clearCompleted"></todo-footer>
       </div>
@@ -69,11 +69,16 @@
       "todo-footer":footer
     },
     mounted(){
-      var token = PubSub.subscribe('deleteTodo', (msg, id)=> {
+     /* PubSub.subscribe('deleteTodo', (msg, id)=> {
           this.todos = this.todos.filter((item)=>{
             return item.id !== id;
           })
-      });
+      });*/
+      this.todoBus.$on("deleteTodo",(id)=> {
+        this.todos = this.todos.filter((item)=>{
+          return item.id !== id;
+        })
+      })
     }
   }
 </script>

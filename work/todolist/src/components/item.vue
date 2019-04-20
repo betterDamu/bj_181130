@@ -22,7 +22,8 @@
         },
         methods:{
           handleC(){
-            PubSub.publish('deleteTodo', this.todo.id);
+            // PubSub.publish('deleteTodo', this.todo.id);
+            this.todoBus.$emit("deleteTodo",this.todo.id)
           }
         }
     }
