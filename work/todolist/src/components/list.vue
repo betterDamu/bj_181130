@@ -1,6 +1,10 @@
 <template>
   <ul class="todo-main">
-    <todo-item v-for="todo in todos"  :todo="todo" :key="todo.id" ></todo-item>
+    <todo-item v-for="todo in todos"  :todo="todo" :key="todo.id" >
+      <template  slot-scope="obj">
+        <slot msg="list-msg"></slot> {{obj.msg}}
+      </template>
+    </todo-item>
   </ul>
 </template>
 

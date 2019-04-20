@@ -1,6 +1,7 @@
 <template>
   <li @mouseenter="isShow = !isShow" @mouseleave="isShow = !isShow" :class="{highlight:isShow}">
     <label>
+      <!--<slot msg="itemmsg" msg2="msg2"></slot>-->
       <input type="checkbox" v-model="todoCompleted" />
       <span>{{todo.text}}</span>
     </label>

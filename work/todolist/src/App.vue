@@ -3,7 +3,16 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <todo-header :addTodo="addTodo"></todo-header>
-        <todo-list :todos="todos" ></todo-list>
+        <todo-list :todos="todos" >
+            <template slot-scope="obj">
+              <p>--{{obj.msg}}--</p>
+            </template>
+        </todo-list>
+        <todo-list :todos="todos" >
+          <template slot-scope="obj">
+             <p>..{{obj.msg2}}..</p>
+          </template>
+        </todo-list>
         <todo-footer :todos="todos" @sellectAll="sellectAll" :clearCompleted="clearCompleted"></todo-footer>
       </div>
     </div>
