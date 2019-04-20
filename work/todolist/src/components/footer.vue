@@ -7,7 +7,7 @@
           <span>已完成 <i style="color:red;font-size: 20px">{{completedCount}}</i> </span>
           ; 全部 <i style="color:green;font-size: 20px">{{todos.length}}</i>
         </span>
-    <button class="btn btn-danger" v-show="completedCount" @click="clearCompleted">清除已完成任务</button>
+    <button class="btn btn-danger" v-show="completedCount" @click="_clearCompleted">清除已完成任务</button>
   </div>
 </template>
 
@@ -15,7 +15,8 @@
     export default {
         name: "todo-footer",
         props:{
-          todos:Array
+          todos:Array,
+          clearCompleted:Function
         },
         computed:{
           completedCount(){
@@ -34,8 +35,9 @@
           }
         },
         methods:{
-          clearCompleted(){
-            this.$emit("clearCompleted");
+          _clearCompleted(){
+            //this.$emit("clearCompleted");
+            this.clearCompleted();
           }
         }
     }
