@@ -4,7 +4,7 @@
       <div class="todo-wrap">
         <todo-header :addTodo="addTodo"></todo-header>
         <todo-list :todos="todos" ></todo-list>
-        <todo-footer :todos="todos" @sellectAll="sellectAll" @clearCompleted="clearCompleted"></todo-footer>
+        <todo-footer :todos="todos" @sellectAll="sellectAll" :clearCompleted="clearCompleted"></todo-footer>
       </div>
     </div>
   </div>
