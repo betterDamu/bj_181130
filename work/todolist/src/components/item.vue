@@ -1,7 +1,7 @@
 <template>
   <li @mouseenter="isShow = !isShow" @mouseleave="isShow = !isShow" :class="{highlight:isShow}">
     <label>
-      <input type="checkbox" v-model="todo.completed" />
+      <input type="checkbox" v-model="todoCompleted" />
       <span>{{todo.text}}</span>
     </label>
     <button class="btn btn-danger" v-show="isShow" @click="handleC">删除</button>
@@ -19,6 +19,16 @@
         },
         props:{
           todo:Object
+        },
+        computed:{
+          todoCompleted:{
+            get(){
+              return this.todo.completed
+            },
+            set(val){
+              PubSub.publish("todoCompleted",{val,id:this.todo.id})
+            }
+          }
         },
         methods:{
           handleC(){

@@ -23,7 +23,7 @@
           {
             id:0,
             text:"吃饭xxxx",
-            completed:false
+            completed:true
           },
           {
             id:1,
@@ -74,6 +74,13 @@
             return item.id !== id;
           })
       });*/
+       PubSub.subscribe('todoCompleted', (msg, obj)=> {
+         this.todos.forEach((item)=>{
+           if(item.id === obj.id){
+             item.completed = obj.val;
+           }
+         })
+       });
       this.todoBus.$on("deleteTodo",(id)=> {
         this.todos = this.todos.filter((item)=>{
           return item.id !== id;
