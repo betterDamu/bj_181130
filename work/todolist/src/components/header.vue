@@ -5,7 +5,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-    var id = 10;
+    import utils from "../utils"
+
+    var id = utils.getIdkey(); // 1
     export default {
         name: "todo-header",
         data(){
@@ -24,11 +26,14 @@
               return;
             }
             //构建一个todo对象
+            var todoId = ++id;
+            utils.setIdkey(todoId);
             const todo ={
-              id: id++,
+              id: todoId,
               text:this.text,
               completed:false
             }
+
 
             // 往 app.vue组件的todos中加一个todo对象
             //this.$emit("addToDo",todo)
