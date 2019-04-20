@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <todo-list>
+            ----
+        </todo-list>
+        <todo-list>
+            .....
+        </todo-list>
+    </div>
+</body>
+<script>
+    // <slot></slot>:占位组件   它的模板是对应组件的innerHTML
+    //  插槽实现了 父组件向子组件传递html判断
+    //  具名插槽   <slot name="名字"></slot>   通过name去模板中找具有同名slot的标签
+    //  插槽的意义:  让父组件扩展子组件的内容
+
+    Vue.component("todo-list",{
+        template:`
+            <ul>
+                <slot></slot> <li>1</li>
+                <slot></slot> <li>2</li>
+                <slot></slot> <li>3</li>
+            </ul>
+        `,
+    })
+
+
+    var vm = new Vue({
+        el:"#app",
+
+    })
+</script>
+</html>

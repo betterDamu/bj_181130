@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <v-damu>
+            <p>插槽</p>
+        </v-damu>
+    </div>
+</body>
+<script>
+    // <slot></slot>:占位组件   它的模板是对应组件的innerHTML
+    //  插槽实现了 父组件向子组件传递html判断
+
+    Vue.component("v-damu",{
+        template:`<div>
+                <slot></slot>
+            </div>`,
+    })
+
+
+    var vm = new Vue({
+        el:"#app",
+
+    })
+</script>
+</html>

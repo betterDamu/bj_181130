@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <todo-list>
+            <template slot-scope="slotProps">
+                ----{{slotProps.item}}
+                {{slotProps.msg}}
+            </template>
+        </todo-list>
+
+        <todo-list>
+            <template slot-scope="slotProps">
+                .....{{slotProps.item}}
+                {{slotProps.msg}}
+            </template>
+        </todo-list>
+    </div>
+</body>
+<script>
+    // <slot></slot>:占位组件   它的模板是对应组件的innerHTML
+    //  插槽实现了 父组件向子组件传递html判断
+    //  具名插槽   <slot name="名字"></slot>   通过name去模板中找具有同名slot的标签
+    //  插槽的意义:  让父组件扩展子组件的内容
+
+    /*
+        作用域插槽:  让slot组件携带子组件的数据  当父组件的传过来的html片段覆盖slot组件时
+         slot组件将数据通过slot-scope传给父组件的html判断
+    */
+
+    Vue.component("todo-list",{
+        data(){
+            return {
+                arr:["a","b","c"]
+            }
+        },
+        template:`
+            <ul>
+                <li v-for="item in arr">
+                     <slot :item="item" msg="123" >
+                        {{item}}
+                    </slot>
+                </li>
+            </ul>
+        `,
+    })
+
+
+    var vm = new Vue({
+        el:"#app"
+    })
+</script>
+</html>
