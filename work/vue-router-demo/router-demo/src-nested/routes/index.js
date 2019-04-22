@@ -7,18 +7,7 @@ import message from "@/components/home/message.vue"
 
 
 const routes =[
-  {
-    path:"/user",
-    component:user,
-    props(route){
-      return {
-        id:route.query.id
-      }
-    },
-    children:[
-      {path:"/user/:id",component:user,props:true}
-    ]
-  },
+  {path:"/user",component:user},
   {
     path:"/home",
     component:home,
@@ -33,10 +22,3 @@ const routes =[
 ]
 
 export default routes
-
-
-// {
-//   path:"/user/:id",
-//     component:user,
-//   props:true
-// },
