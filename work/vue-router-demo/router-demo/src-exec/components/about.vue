@@ -1,6 +1,6 @@
 <template>
     <p>
-      about <input type="text">
+      about
     </p>
 </template>
 

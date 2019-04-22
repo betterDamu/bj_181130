@@ -1,12 +1,10 @@
 <template>
-    <p>
-      about <input type="text">
-    </p>
+    <p>news</p>
 </template>
 
 <script type="text/ecmascript-6">
     export default {
-        name: "about"
+        name: "news"
     }
 </script>
 

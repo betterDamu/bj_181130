@@ -20,9 +20,7 @@
         <div data-v-957c9522="" class="col-xs-6">
           <div data-v-957c9522="" class="panel">
             <div data-v-957c9522="" class="panel-body">
-             <keep-alive>
-               <router-view></router-view>
-             </keep-alive>
+              <router-view></router-view>
             </div>
           </div>
         </div>
