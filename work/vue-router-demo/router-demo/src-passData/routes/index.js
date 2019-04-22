@@ -2,8 +2,7 @@ import user from "@/components/user"
 import home from "@/components/home"
 import about from "@/components/about"
 import news from "@/components/home/news"
-import message from "@/components/home/message"
-import messageDetail from "@/components/home/message/messageDetail"
+import message from "@/components/home/message.vue"
 
 
 
@@ -25,21 +24,7 @@ const routes =[
     component:home,
     children:[
       {path:"news",component:news},
-      {
-        path:"message",
-        component:message,
-        children:[
-          {
-            path:"messageDetail",
-            component:messageDetail,
-            props(route){
-              return {
-                id:route.query.id
-              }
-            }
-          }
-        ]
-      },
+      {path:"message",component:message},
       {path:"",redirect:"news"}
     ]
   },
