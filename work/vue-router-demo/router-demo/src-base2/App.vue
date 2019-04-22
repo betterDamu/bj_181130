@@ -14,6 +14,8 @@
           <router-link to="/user" class="list-group-item ">Go to User</router-link>
           <router-link to="/about" class="list-group-item ">Go to About</router-link>
           <router-link to="/home" class="list-group-item ">Go to Home</router-link>
+          <router-link to="/about/item" class="list-group-item ">Go to AboutItem</router-link>
+
         </div>
       </div>
       <div class="col-xs-6">
