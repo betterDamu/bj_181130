@@ -5,12 +5,13 @@
   "author": "damu <damu@example.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --open chrome",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "pubsub-js": "^1.7.0",
     "vue": "^2.5.2",
     "vue-resource": "^1.5.1"
   },
