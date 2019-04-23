@@ -8,25 +8,13 @@ const store = new Vuex.Store({
   state:{
     count:0
   },
-  getters:{
-    countType(state){
-      return state.count%2 === 0 ? "偶数":"奇数";
-    }
-  },
   //处理数据的工具
   mutations:{
-    inc(state,obj){
-      console.log(obj.step,obj.name)
-      state.count+=obj.step;
-    },
-    dec(state,obj){
-      console.log(obj.step,obj.name)
-      state.count-=obj.step;
+    inc(state){
+      state.count++;
     }
-  },
-
+  }
 })
-
 
 
 export default store
