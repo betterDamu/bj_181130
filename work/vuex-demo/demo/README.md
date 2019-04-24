@@ -28,5 +28,17 @@
       - 定义names(确保命名统一)
       - 分析页面上该如何提交该次mutation     
       - 完成功能 进行测试
+     
+# 移动端全栈 (web(pc) + H5 + 安卓 + ios + 小程序)  
+    JS + java + objectC     
+# web全栈
+    js + node
+    js + php     
+    js + java(主流)
+    
+# 产品
+  H5 + UI + UE + 设计
+# 技术性销售    
+   
   
 
