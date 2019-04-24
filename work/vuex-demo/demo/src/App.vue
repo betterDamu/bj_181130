@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <v-count></v-count>
+    <div class="container">
+      <v-search></v-search>
+      <v-list></v-list>
+    </div>
   </div>
 </template>
 
 <script>
-import count from "./components/count"
+import search from "./components/search"
+import list from "./components/list"
+
 export default {
   name: 'App',
   components:{
-    "v-count":count
+    "v-search":search,
+    "v-list":list
   }
 }
 </script>
