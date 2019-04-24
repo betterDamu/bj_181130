@@ -17,23 +17,20 @@ const store = new Vuex.Store({
   //处理数据的工具
   mutations:{
     inc(state,obj){
+      console.log(obj.step,obj.name)
       state.count+=obj.step;
     },
     dec(state,obj){
+      console.log(obj.step,obj.name)
       state.count-=obj.step;
     },
     asyncInc(state,obj){
-      state.count+=obj.step;
+      setTimeout(()=>{
+        state.count += obj.step
+      },2000)
     }
   },
-  //处理数据的工具
-  actions:{
-    asyncInc(store,obj){
-     setTimeout(()=>{
-       store.commit("asyncInc",obj)
-     },10000)
-    }
-  }
+
 })
 
 
