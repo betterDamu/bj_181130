@@ -110,4 +110,7 @@
         }
            
 ## getters
-    仓库中的计算属性           
+    仓库中的计算属性          
+    
+## ECMAScript 严格模式
+    http://es6.ruanyifeng.com/#docs/module     
