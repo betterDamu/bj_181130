@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*属性描述符:
+        属性的特征;也叫元属性;修饰属性的属性*/
+
+    var obj={
+        name:"达姆",
+        age:18,
+        wife:"周冬雨"
+    }
+    var res = Object.getOwnPropertyDescriptor(obj,"wife");
+    console.log(res)
+
+    /*
+        res是一个对象
+        {
+            configurable: true
+            enumerable: true
+
+            value: "周冬雨"
+            writable: true
+        }
+    */
+</script>
+</html>

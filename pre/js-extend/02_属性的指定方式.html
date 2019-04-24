@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*属性的指定方式:
+        1. 字面量初始化的时候直接通过 键值对的形式指定
+                 属性描述符的默认值基本都是true
+        2. 通过对象点的形式来指定
+                 属性描述符的默认值基本都是true
+        3. 原始的指定形式的方式
+`               属性描述符的默认值基本都是false
+                value:undefined
+
+    */
+
+    var obj={
+        name:"达姆",
+        age:18,
+        wife:"周冬雨"
+    }
+    obj.wife3="马思纯"
+
+
+    Object.defineProperty(obj,"wife2",{
+        value:"马冬梅"
+    });
+    console.log(obj);
+
+    console.log(Object.getOwnPropertyDescriptor(obj,"wife2"))
+    console.log(Object.getOwnPropertyDescriptor(obj,"wife"))
+    console.log(Object.getOwnPropertyDescriptor(obj,"wife3"))
+
+</script>
+</html>

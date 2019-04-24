@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // configurable：控制了属性的可配置权限
+    //     可配置:属性能否重新定义  属性能否删除
+    var obj={
+        name:"达姆",
+        age:18
+    }
+
+    //新增属性
+    Object.defineProperty(obj,"wife",{
+         value:"18岁的周冬雨",
+         writable:true,
+         configurable:false,
+         enumerable:false
+    })
+
+    //重新配置属性
+    //当configurable为false时，writable可以进行重新定义，但只满足由writable：true  ==> writable：false
+    Object.defineProperty(obj,"wife",{
+        value:"27岁的周冬雨"
+    })
+
+    console.log(obj);
+
+
+
+
+</script>
+</html>

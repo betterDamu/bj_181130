@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj={
+        a:undefined,
+        wife:{
+            name:"xxx"
+        }
+    };
+    console.log(obj.a);
+
+    //in关键字 会影响对象的直接属性 也访问原型链  可是不访问对象的深层属性
+    console.log("a" in obj)
+    console.log("b" in obj)
+    console.log("toString" in obj)
+    console.log("name" in obj,"------")
+
+    //在js中所有的方法都是 浅不变形 的;只会影响对象的直接属性 不访问原型链 也不访问对象的深层属性
+    console.log(obj.hasOwnProperty("a"));
+    console.log(obj.hasOwnProperty("b"));
+    console.log(obj.hasOwnProperty("toString"));
+    console.log(obj.hasOwnProperty("name"));
+
+    var res = Object.getOwnPropertyNames(obj);
+    console.log(res);
+</script>
+</html>

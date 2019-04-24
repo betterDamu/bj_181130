@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj = {
+        name:"达姆",
+        age:18,
+        wife:{
+            name:"周冬雨",
+            age:17,
+            son:{
+                name:"张晓飞",
+                age:48,
+                girlFriend:{
+                    name:"凤姐",
+                    age:50,
+                    zuo:function () {
+                        console.log("翻旧账")
+                    },
+                    foods:["棉花糖","粉色的棉花糖","各种棉花糖"]
+                }
+            }
+        }
+    };
+
+
+    Object.deepFreeze = function (obj) {
+        var keys = Object.getOwnPropertyNames(obj);
+        keys.forEach(function (key) {
+            var val = obj[key];
+            if(Object.prototype.toString.call(val) === "[object Object]"){
+                Object.deepFreeze(val)
+            }
+        });
+        return Object.freeze(obj)
+    }
+
+    Object.deepFreeze(obj)
+
+    obj.wife.name="马思纯";
+    obj.wife.son.name="王思聪";
+    obj.wife.son.girlFriend.zuo="zuo";
+    obj.wife.son.girlFriend.foods="foods";
+    console.log(obj)
+
+
+
+</script>
+</html>

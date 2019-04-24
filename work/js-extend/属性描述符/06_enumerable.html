@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj ={}
+    Object.defineProperty(obj,"name",{
+        value:"晓飞",
+        writable:true,
+        configurable:true,
+        enumerable:false
+    })
+
+    Object.defineProperty(obj,"age",{
+        value:18,
+        writable:true,
+        configurable:true,
+        enumerable:true
+    })
+
+    console.log(obj)
+    for(key in obj){
+        console.log(key)
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    
+    var obj={
+       
+    }
+
+    Object.defineProperty(obj,"age",{
+        get:function () {
+            return obj.__age__;
+        },
+        set:function (val) {
+
+            if (val > 150){
+                val =150;
+            }else if(val < 0){
+                val =0;
+            }
+
+            obj.__age__=val;
+        }
+    })
+
+    obj.age=1000;
+    console.log(obj.age)
+</script>
+</html>

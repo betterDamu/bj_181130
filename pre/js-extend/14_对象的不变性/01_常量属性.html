@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var MathCopy = {};
+    Object.defineProperty(MathCopy,"PI",{
+        value:3.141592654,
+        writable:false,
+        configurable:false,
+        enumerable:true
+    })
+    MathCopy.PI=1;
+    console.log(MathCopy.PI)
+</script>
+</html>
