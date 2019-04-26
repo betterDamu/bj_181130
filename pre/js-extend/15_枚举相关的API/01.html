@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<SCRIPT>
+    var obj={
+        a:"xxx"
+    }
+    Object.defineProperty(obj,"b",{
+        value:"b"
+    })
+    console.log(obj.propertyIsEnumerable("a"))
+    console.log(obj.propertyIsEnumerable("b"))
+
+    console.log(Object.keys(obj))
+</SCRIPT>
+</html>

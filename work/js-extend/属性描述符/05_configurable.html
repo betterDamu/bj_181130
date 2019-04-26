@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj ={}
+
+    // value的值能不能动 就看writable
+    // 小小的意外: 当 configurable:false
+    //          value是可以修改的
+    //          writable  可以 从 true 变为 false
+    //          从属性的不变性上来讲 这么做 属性的不变性又提升了一个层级
+
+
+    Object.defineProperty(obj,"name",{
+        value:"晓飞",
+        writable:true,
+        configurable:false
+    })
+
+    Object.defineProperty(obj,"name",{
+        value:"晓飞2",
+        writable:false
+    })
+
+    console.log(obj)
+</script>
+</html>

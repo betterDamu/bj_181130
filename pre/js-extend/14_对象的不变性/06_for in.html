@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    Object.prototype.a="a";
+    var obj = {
+        name:"达姆",
+        age:18
+    };
+
+    console.log(Object.getOwnPropertyDescriptor(Object.prototype,"toString"))
+
+   for(var item in obj){
+       console.log(item)
+   }
+
+
+
+</script>
+</html>

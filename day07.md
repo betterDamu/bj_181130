@@ -36,7 +36,6 @@
     })
     
     export default store
-
 ## 注册仓库
     在 main.js 中注册
     import store from "./store"
@@ -44,11 +43,11 @@
         store
     })
     
-### 使用仓库中的数据
+## 使用仓库中的数据
     所有的组件对象都会有一个$store属性  代表vuex的仓库
     仓库中所有配置都会挂给仓库对象
     {{this.$store.state.key}}
-### 修改仓库中的数据   
+## 修改仓库中的数据   
 #### 使用仓库中的数据的一个注意点  (希望修改了仓库数据后可以在页面上响应式的展示)
         最好不要直接使用仓库的数据   {{this.$store.state.key}}
         一般都要拿一个计算属性与仓库中数据做一一对应
@@ -110,3 +109,8 @@
             ...mapMutations(["name"])
         }
            
+## getters
+    仓库中的计算属性          
+    
+## ECMAScript 严格模式
+    http://es6.ruanyifeng.com/#docs/module     

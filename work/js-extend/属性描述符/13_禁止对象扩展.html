@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var damu ={
+        name:"达姆"
+    }
+    Object.defineProperty(damu,"wife",{
+        value:"周冬雨"
+    })
+    Object.preventExtensions(damu);
+
+    delete damu.name;
+    damu.son ="王思聪";
+    console.log(damu)
+</script>
+</html>

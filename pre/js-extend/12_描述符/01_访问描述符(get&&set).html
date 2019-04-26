@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 属性描述符 : 属性的特征  属性的属性
+    // 数据描述符 : 具有writable 和 value属性描述符 的属性!
+    // 访问描述符 : 具有set 和 get属性描述符 的属性!
+
+
+    /*
+    属性的指定方式:
+      1. 字面量初始化的时候直接通过 键值对的形式指定
+               属性描述符的默认值基本都是true
+      2. 通过对象点的形式来指定
+               属性描述符的默认值基本都是true
+      3. 原始的指定形式的方式
+`               属性描述符的默认值基本都是false
+              value:undefined
+       4. var a = "a"; 给window添加的属性
+               configurable: false
+               enumerable: true
+               writable: true
+       5.    b="b";给window添加的属性
+           属性描述符的默认值基本都是true
+       6. 通过get&set方法来指定属性
+            获取属性值:看对应get方法的返回值
+            设置属性值:看set方法的逻辑
+  */
+
+    var obj={
+        get age(){
+            return obj.__age__;
+        },
+        set age(val){
+            if (val > 150){
+                val =150;
+            }else if(val < 0){
+                val =0;
+            }
+
+            obj.__age__=val;
+        }
+    }
+
+    obj.age=33;
+    console.log(obj.age);
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    Object.prototype.a="a";
+    var obj={
+        name:undefined
+    }
+    console.log("a" in obj)
+    console.log(obj.hasOwnProperty("a"))  // js中的方法都是浅不变形的 他们全部都不会上原型链
+
+    console.log(Object.getOwnPropertyNames(obj))
+</script>
+</html>

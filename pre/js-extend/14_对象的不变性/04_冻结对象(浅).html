@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj = {
+        a:"a",
+        b:'b'
+    };
+    Object.freeze(obj);
+
+    delete  obj.a;
+    obj.c="c";
+    obj.a="aa";
+    console.log(obj);
+</script>
+</html>

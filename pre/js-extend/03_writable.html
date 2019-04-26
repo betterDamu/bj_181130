@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // writable决定是否可以修改属性的值
+    var obj={
+        name:"达姆",
+        age:18,
+        wife:"周冬雨"
+    }
+
+    obj.wife="马思纯";
+
+    Object.defineProperty(obj,"wife",{
+        writable:false
+    })
+
+    //静默失败
+    obj.wife="张晓飞";
+    console.log(obj);
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<!--
+    严格模式的语法比较严谨
+        没有通过var定义的变量 在严格模式底下就会报错
+        this的指向
+            普通调用时 如果是严格模式 那this指向undefined
+        在属性描述符writable为flase的情况下 对属性值进行修改 就会报错不会静默失败
+        在属性描述符configurable为flase的情况下 对属性进行删除 就会报错不会静默失败
+
+-->
+<script>
+    "use strict";
+    var obj={
+        name:"达姆",
+        age:18,
+        wife:"周冬雨"
+    }
+
+    obj.wife="马思纯";
+
+    Object.defineProperty(obj,"wife",{
+        writable:false
+    })
+
+    //报错
+    obj.wife="张晓飞";
+    console.log(obj);
+</script>
+</html>

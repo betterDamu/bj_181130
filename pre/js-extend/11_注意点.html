@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // writable为false 时 configurable一般也为false
+    var obj={
+        name:"达姆",
+        age:18
+    }
+
+    //新增属性
+    Object.defineProperty(obj,"wife",{
+        value:"18岁的周冬雨",
+        writable:true,
+        configurable:false,
+        enumerable:false
+    })
+
+
+    Object.defineProperty(obj,"wife",{
+        value:"27岁的周冬雨"
+    })
+
+    console.log(obj);
+</script>
+</html>

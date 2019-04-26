@@ -1,0 +1,13 @@
+静态方法
+    Object.create()
+    Object.defineProperty()
+    Object.getOwnPropertyDescriptor()
+    Object.getOwnPropertyNames()
+    Object.preventExtensions()
+    Object.seal()
+    Object.freeze()
+    Object.keys()
+实例方法
+    Object.prototype.toString()
+    Object.prototype.valueOf()
+    Object.prototype.propertyIsEnumerable()

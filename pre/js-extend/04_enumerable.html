@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // enumerable可枚举：控制了属性的可枚举权限
+    // 可枚举:能否出现在对象的for in循环中
+    var obj={
+        name:"达姆",
+        age:18,
+        wife:"周冬雨"
+    }
+    Object.defineProperty(obj,"wife2",{
+        value:"马思纯",
+        enumerable:true
+    })
+
+    for(var item in obj){
+        console.log(item);
+    }
+
+</script>
+</html>

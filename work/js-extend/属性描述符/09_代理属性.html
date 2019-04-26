@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+   var obj={
+       name:"xxx"
+   };
+
+   //属性更安全   代理属性是为了避免递归
+   Object.defineProperty(obj,"age",{
+       get:function () {
+            return this.__age__;
+       },
+       set:function (val) {
+           if(val>150){
+               val = 150;
+           }else if(val <0){
+               val = 0;
+           }
+           this.__age__ = val;
+       }
+   })
+
+    console.log(obj.age)
+    obj.age = 2000;
+    console.log(obj.age)
+</script>
+</html>
