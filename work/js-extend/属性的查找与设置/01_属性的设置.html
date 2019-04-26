@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //obj.a = 1;
+   /*
+      1.如果属性直接存在于对象中　不在原型链上
+      2.如果属性直接存在于对象中  也在原型链上
+        找到直接存在于对象中的属性
+            -数据描述符(没有setter/getter)
+                直接修改对象中的属性(注意writbale的值)
+            -访问描述符
+                直接调用set方法
+       3.如果属性不直接存在于对象中也不在原型链上
+             在对象的直接属性中添加一个属性（数据描述符）
+                value:"a"
+                writable:true
+                configurable:true
+                enumerable:true
+    */
+
+
+
+   /*
+    4.如果属性不直接存在于对象中  在原型链上
+          ①.该属性是数据描述符(没有setter/getter)
+                -writbale为true
+                    直接在对象中添加一个属性，我们称之为屏蔽属性
+                -writbale为false
+                    严格模式报错，不会生成屏蔽属性
+
+          ②.该属性是访问描述符
+                调用set，不会生成屏蔽属性
+    */
+   /*Object.prototype.a="prototype_a" ;
+   var obj={}
+   obj.a="a";
+   console.log(obj,Object.prototype.a)*/
+
+    /*Object.defineProperty(Object.prototype,"a",{
+        value:"prototype_a",
+        writable:false
+    })
+    var obj={}
+    obj.a="a";
+    console.log(obj,Object.prototype.a)*/
+
+    Object.defineProperty(Object.prototype,"a",{
+        get:function(){
+            return "prototype_a"
+        },
+        set:function(val){
+            console.log("----")
+        }
+    })
+    var obj={}
+    obj.a="a";
+    console.log(obj,Object.prototype.a)
+
+
+    // 业务代码：
+    //      查找: 先在对象的直接属性中  找不到上原型链  原型链都没有返回undefined
+    //      设置: 影响对象的直接属性
+    // 库，第三方框架
+    //      obj.a = 1;
+    //      有没有可能修改不了obj.a的值？（obj肯定有a属性了）
+    //             a是数据描述符 writable为false
+    //             a是访问描述符 set方法什么都没干
+    //      有没有可能连a属性都添加不上？（obj肯定没有a属性了）
+    //             obj没有a属性  原型链上存在a属性 而且这个a属性
+    //                 是数据描述符 writable为false
+    //                 是访问描述符 set方法什么都没干
+
+</script>
+</html>
