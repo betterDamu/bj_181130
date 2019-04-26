@@ -16,8 +16,6 @@ Observer.prototype = {
     defineReactive: function(data, key, val) {
         //每一个data中的属性（包括深层次属性都一个dep闭包）
         var dep = new Dep();
-
-
         var childObj = observe(val);
 
 
@@ -46,8 +44,7 @@ Observer.prototype = {
     }
 };
 
-//value是配置对象的data属性
-//vm
+//value是配置对象的data属性  ;  vm : new MVVM()
 function observe(value, vm) {
     if (!value || typeof value !== 'object') {
         return;

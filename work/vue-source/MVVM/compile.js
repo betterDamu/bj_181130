@@ -40,7 +40,6 @@ Compile.prototype = {
 
             if (me.isElementNode(node)) {
                 me.compile(node);
-
             } else if (me.isTextNode(node) && reg.test(text)) {
                 me.compileText(node, RegExp.$1);
             }
