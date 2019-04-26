@@ -33,6 +33,7 @@ Compile.prototype = {
         var childNodes = el.childNodes,
             me = this;
 
+        //Array.prototype.slice.call(childNodes)
         [].slice.call(childNodes).forEach(function(node) {
             var text = node.textContent;
             var reg = /\{\{(.*)\}\}/;

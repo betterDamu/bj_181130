@@ -14,6 +14,13 @@
 <script src="./MVVM/compile.js"></script>
 <script src="./MVVM/watcher.js"></script>
 <script>
+    /*模板解析步骤
+        1. 将挂载节点下的所有子节点放入文档碎片中
+        2. 解析文档碎片(init)
+
+        3. 挂载解析完的文档碎片
+      */
+
     var vm = new MVVM({
         el:"#app",
         data:{

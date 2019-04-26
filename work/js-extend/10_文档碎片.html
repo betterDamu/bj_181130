@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="app">
+        <li>damu</li>
+        <li>xfz</li>
+        <li>zdy</li>
+        <li>zty</li>
+        <li>lzy</li>
+    </ul>
+</body>
+<script>
+    window.onload=function () {
+        var appNode = document.querySelector("#app");
+        var fragment =  document.createDocumentFragment();
+        var child =null;
+
+
+        //把app中所有的节点 一个个的剪切到 fragment中
+        while (child = appNode.firstChild){
+            //每次都在重绘重排
+            fragment.appendChild(child) // !剪切操作!
+        }
+
+
+        //不用重绘重排
+        var children = Array.from(fragment.children);
+        children.forEach((item)=>{
+            item.innerHTML = "atguigu-"+ item.innerHTML;
+        })
+
+        //重绘重排
+        appNode.appendChild(fragment)
+    }
+</script>
+</html>
