@@ -1,0 +1,13 @@
+vm.damu={}
+
+
+set: function(newVal) {
+    if (newVal === val) {
+        return;
+    }
+    val = newVal;
+    // 新的值是object的话，进行监听
+    childObj = observe(newVal);
+    // 通知订阅者
+    dep.notify();
+}

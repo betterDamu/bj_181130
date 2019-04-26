@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script src="./MVVM/mvvm.js"></script>
+<script src="./MVVM/observer.js"></script>
+<script src="./MVVM/compile.js"></script>
+<script src="./MVVM/watcher.js"></script>
+<script>
+    //什么叫数据代理
+        /*将配置对象data对象属性中的属性一一获取到
+            然后通过Object.defineProperty方法将获取到属性一一重新绑给vm实例对象
+                绑上去的是一个访问描述符*/
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            msg:"damu"
+        }
+    })
+
+    console.log(vm.msg)
+
+</script>
+
+
+</html>

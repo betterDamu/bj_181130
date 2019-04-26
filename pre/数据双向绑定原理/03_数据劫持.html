@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p v-text="damu.wife.son.name">
+            {{damu.wife.son.age}}
+        </p>
+    </div>
+</body>
+<script src="./MVVM/mvvm.js"></script>
+<script src="./MVVM/observer.js"></script>
+<script src="./MVVM/compile.js"></script>
+<script src="./MVVM/watcher.js"></script>
+<script>
+    /*什么是数据劫持？
+        将data中的所有属性（包括深层次属性）拿出 一一进行重新定义
+                将它从一个数据描述符 转成一个 访问描述符
+    */
+
+    /*vue内部为每一个data属性包括深层次属性分配一个dep
+            一个dep对应一个属性*/
+
+
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            damu:{
+                damuname:"达姆",
+                age:18,
+                wife:{
+                    wifename:"冬雨",
+                    age:28,
+                    son:{
+                        sonname:"小达姆",
+                        age:0.5
+                    }
+                }
+            },
+            a:"a",
+            b:"b",
+            c:"c"
+        }
+    })
+</script>
+</html>

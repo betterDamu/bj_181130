@@ -1,0 +1,38 @@
+/*  数据代理
+    数据劫持 作用于data对象 (damu a b c)
+        observe(data, vm);
+            判断data是否是一个对象
+                    不是对象----> return
+                    是对象 ----> new Observer
+                        walk(damu a b c)
+                            Object.keys(data).forEach(function(key) {
+                                me.convert(key, data[key]);
+                                    --->
+                                        convert
+                                        defineReactive
+                                        var dep = new Dep();
+                                        var childObj = observe(val);
+                                                observe(damu对象) ---> 进入下一次递归
+                                        数据劫持的真正逻辑
+                            });
+
+         observe(damu, vm); 作用于damu对象 （damuname age wife）
+            判断damu是否是一个对象
+                    不是对象----> return
+                    是对象 ----> new Observer
+                        walk   (damuname age wife)
+                            Object.keys(data).forEach(function(key) {
+                                me.convert(key, data[key]);
+                                    --->
+                                        convert
+                                        defineReactive
+                                        var dep = new Dep();
+                                        var childObj = observe(val);
+                                               observe(“达姆”) ---> return
+                                               observe(18)  ----> return
+                                               observe(wife对象) ---> 进入下一次递归
+                                        数据劫持的真正逻辑
+                            });
+
+                 。。。。。。
+ */

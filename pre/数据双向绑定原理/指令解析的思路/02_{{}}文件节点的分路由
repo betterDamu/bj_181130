@@ -1,0 +1,26 @@
+3.compileText
+            -&ndash;&gt; compileUtil (根据指令不同找到的工具类也不同)
+                -&ndash;&gt; 不管是什么指令都会找到工具类的bind工具
+                    -&ndash;&gt; bind工具去找对应的更新器  拿回更新器进行调用
+
+    4.更新器的调用
+            updaterFn(node, this._getVMVal(vm, exp))
+
+            _getVMVal: function(vm, exp) {
+                            var val = vm._data; // 配置对象的data属性
+                            exp = exp.split('.'); //[damu,wife,son,age]
+                            exp.forEach(function(k) {
+                                val = val[k]; //剥洋葱
+                            });
+                            return val; //age的值
+                        },
+
+    5.
+        _getVMVal  退出
+        updaterFn  退出
+        bind
+        text
+        compileText
+        compileElement
+        01_init
+        Compile-->

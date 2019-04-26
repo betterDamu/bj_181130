@@ -1,0 +1,15 @@
+new Watcher(vm, exp, function(value, oldValue) {
+    updaterFn && updaterFn(node, value, oldValue);
+});
+
+--->
+    wtacher.depIds = {};
+    dep.subs = []
+--->
+     dep.depend();
+        ---> Dep.target.addDep(this);
+            ---->
+                 dep.addSub(this);
+                        --->    dep.subs.push(sub);  ---> 构建dep和watcher  （1 vs 多）
+                 this.depIds[dep.id] = dep;
+                        --->   构建dep和watcher  （多 vs 1）

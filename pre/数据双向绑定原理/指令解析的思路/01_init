@@ -1,0 +1,9 @@
+1. this.$compile = new Compile(options.el || document.body, this)
+            this.$fragment = this.node2Fragment(this.$el);
+            this.init();//真正做解析
+            this.$el.appendChild(this.$fragment);
+
+    2.this.init()
+           compileElement
+                  compile
+                  compileText

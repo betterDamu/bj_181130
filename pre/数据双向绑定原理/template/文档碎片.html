@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p>我是p标签</p>
+        <p>我是p标签</p>
+        <p>我是p标签</p>
+        <p>我是p标签</p>
+        <span>我是span标签</span>
+        <span>我是span标签</span>
+        <span>我是span标签</span>
+    </div>
+</body>
+<script>
+    window.onload=function () {
+
+        var appNode = document.querySelector("#app");
+        var fragment =  new DocumentFragment();
+
+        //发生重绘重排
+        while (appNode.firstChild){
+            //appendChild:如果被appen的对象原本就存在于dom树那么进行的是一次剪切操作
+            fragment.appendChild(appNode.firstChild)
+        }
+
+
+        var nodeArr =  Array.from(fragment.children);
+        nodeArr.map((item)=>{
+            item.innerHTML += "-atguigu"
+        })
+
+
+        //发生重绘重排
+        appNode.appendChild(fragment)
+
+    }
+
+</script>
+</html>

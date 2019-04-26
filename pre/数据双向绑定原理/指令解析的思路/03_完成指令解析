@@ -1,0 +1,36 @@
+---> bind
+    bind根据指令不一样 去找对应指令的更新器
+          提取更新器进行调用
+               --->this._getVMVal(vm, exp)
+                    为更新器准备数据
+                    _getVMVal: function(vm, exp) {
+                            var val = vm._data;
+                            exp = exp.split('.');
+                            exp.forEach(function(k) {
+                                val = val[k];
+                                //数据劫持过！！！！
+                                    劫持时的get方法！！
+                                    get: function() {
+                                        if (Dep.target) {  // Dep.target： null
+                                            dep.depend();
+                                        }
+                                        return val;
+                                    }
+
+                            });
+                            return val;
+                        },
+
+
+    bind在完成指令解析之后,进行watcher的构造，在构造过程的当中完成 dep 和 watcher的多对多关系
+                new Watcher(vm, exp, function(value, oldValue) {
+                    updaterFn && updaterFn(node, value, oldValue);
+                });
+
+
+    bind在完成指令解析之后；还要进行收尾工作
+                1. 移除刚刚解析成功的attr
+                2. 递归的解析子节点
+
+
+

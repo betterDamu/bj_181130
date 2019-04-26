@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{damu.wife.son.age}}
+    </div>
+</body>
+<script src="./MVVM/mvvm.js"></script>
+<script src="./MVVM/observer.js"></script>
+<script src="./MVVM/compile.js"></script>
+<script src="./MVVM/watcher.js"></script>
+<script>
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            damu:{
+                name:"达姆",
+                age:18,
+                wife:{
+                    name:"冬雨",
+                    age:28,
+                    son:{
+                        name:"小达姆",
+                        age:0.5
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+<!--    1. this.$compile = new Compile(options.el || document.body, this)
+        -&#45;&#45;》
+            this.$fragment = this.node2Fragment(this.$el);
+            this.01_init();//真正做解析
+            this.$el.appendChild(this.$fragment);
+
+    2.this.01_init()
+            -&ndash;&gt; compileElement
+                    -&#45;&#45;是元素子节点-&ndash;&gt; compile
+
+                    -&#45;&#45;是满足{{}}的文本节点 -&ndash;&gt;compileText
+
+
+
+
+    3.compileText
+            -&ndash;&gt; compileUtil (根据指令不同找到的工具类也不同)
+                -&ndash;&gt; 不管是什么指令都会找到工具类的bind工具
+                    -&ndash;&gt; bind工具去找对应的更新器  拿回更新器进行调用
+
+    4.更新器的调用
+            updaterFn(node, this._getVMVal(vm, exp))
+
+            _getVMVal: function(vm, exp) {
+                            var val = vm._data; // 配置对象的data属性
+                            exp = exp.split('.'); //[damu,wife,son,age]
+                            exp.forEach(function(k) {
+                                val = val[k]; //剥洋葱
+                            });
+                            return val; //age的值
+                        },
+
+    5.
+        _getVMVal  退出
+        updaterFn  退出
+        bind
+        text
+        compileText
+        compileElement
+        01_init
+        Compile-->
+</html>
