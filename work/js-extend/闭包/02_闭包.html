@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+     /*
+        创建闭包的必要条件
+            函数得嵌套
+            内部函数必须要使用到了外部函数的变量
+
+        什么时候创建闭包?
+            外部函数的执行上下文被创建时( 外部函数被调用时)
+
+        闭包放在了哪?
+            闭包放在了内部函数的作用域中
+
+        闭包有什么作用?
+            延长外部函数执行上下文中变量的生命周期!!
+
+        闭包什么时候销毁?
+            闭包一般不会主动销毁
+            内部函数置为null
+
+        闭包的问题
+            内存泄漏(有内存被占用着 无法释放!!)
+                问题不大!!!   占据的内存比较小   前端没有高并发!!!!!!
+            内存溢出(有100M内存  使用了101M)
+
+        闭包和内部函数是一一对应的关系!!!
+
+        鸡肋闭包!!!
+     */
+
+
+    function wrap() {
+        var a="a-val";
+        function inner() {
+            console.log(a);
+        }
+        return inner;
+    }
+
+    var inner = wrap();
+    inner();
+    // wrap()();
+
+</script>
+</html>

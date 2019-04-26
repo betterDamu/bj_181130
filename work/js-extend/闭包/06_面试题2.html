@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07_面试题2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  /*
+   说说它们的输出情况
+   */
+
+  function fun(n, o) {
+    console.log(o)
+    return {
+      fun: function (m) {
+        return fun(m, n)
+      }
+    }
+  }
+  var a = fun(0)
+  a.fun(1)  // -- var b = fun(1,0)
+  a.fun(2) // var c = fun(2,0);
+  a.fun(3) //  var d  = fun(3,0)
+  // undefined,0,0,0
+
+  var b = fun(0).fun(1).fun(2).fun(3) //undefined,0,1,2
+
+  /*
+    var 对象1号 = fun(0);
+    var 对象2号 = 对象1号.fun(1);
+    var 对象3号 = 对象2号.fun(2);
+    var 对象4号 = 对象3号.fun(3);
+  */
+
+  var c = fun(0).fun(1)
+  c.fun(2)
+  c.fun(3) //undefined,0,1,1
+
+  /*
+    var 对象1号 = fun(0);
+    var 对象2号 = 对象1号.fun(1);
+    对象2号.fun(2);
+    对象2号.fun(3);
+  */
+
+</script>
+</body>
+</html>

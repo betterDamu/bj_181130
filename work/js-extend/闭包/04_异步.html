@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // for(var i=0;i<5;i++){
+    //     setTimeout(function () {
+    //         console.log(i)
+    //     },1000)
+    // }
+
+    //闭包和内部函数是一一对应的关系
+    // 当内部作用域需要访问并记住作用域链时就会产生闭包!!
+    for(var i=0;i<5;i++){
+        (function (i) {
+            setTimeout(function () {
+                console.log(i)
+            },1000000000000000000)
+        })(i)
+    }
+</script>
+</html>
