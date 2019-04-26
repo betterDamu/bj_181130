@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script src="./MVVM/mvvm.js"></script>
+<script src="./MVVM/observer.js"></script>
+<script src="./MVVM/compile.js"></script>
+<script src="./MVVM/watcher.js"></script>
+<script>
+   /* 1. 数据代理
+        首先获取到配置对象的data属性 绑给vm实例对象
+        将当前这个data对象所有的可枚举属性一一拿出来 转绑给vm实例对象
+            data中的属性都是数据描述符
+            转绑给vm实例对象时 全部变成访问描述符
+                    get 读原始数据源
+                    set 改原始的数据源*/
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            msg:"hello vue"
+        }
+    })
+
+    console.log(vm.msg)
+</script>
+</html>
