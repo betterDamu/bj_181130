@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p  v-html="damu.damuwife.wifeson.sonname" >
+
+        </p>
+        {{damu.damuwife.wifeson.sonage}}
+    </div>
+</body>
+<script src="./MVVM/mvvm.js"></script>
+<script src="./MVVM/observer.js"></script>
+<script src="./MVVM/compile.js"></script>
+<script src="./MVVM/watcher.js"></script>
+<script>
+
+   //1. data中的每一个属性都对应了一个dep
+   //2. 每一个指令(v-  ; {{}}) 都对应了一个watcher
+   //3. dep与watcher要构建一个多对多关系
+
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            damu:{
+                damuname:"达姆",
+                damuage:18,
+                damuwife:{
+                    wifename:"周冬雨",
+                    wifeage:17,
+                    wifeson:{
+                        sonname:"王思聪",
+                        sonage:38,
+                    }
+                }
+            },
+            a:"a",
+            b:"b",
+            c:"c"
+        }
+    })
+
+    vm.damu
+</script>
+</html>
