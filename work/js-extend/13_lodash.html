@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var exports = {a:"a"} ;
+    var freeExports  = typeof exports == 'object' && exports && !exports.nodeType && exports;
+    console.log(freeExports === exports)
+</script>
+</html>
