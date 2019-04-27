@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			基本数据类型总是通过值复制的方式来赋值/传递
+			引用数据类型总是通过引用复制来完成赋值/传递
+		-->
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function foo(arr){
+			arr.push(4);
+			console.log(arr);// [1,2,3,4]
+			
+			//清空数组
+			arr.length=0;
+			arr.push("a");
+			arr.push("b");
+			arr.push("c");
+			console.log(arr);//[a,b,c]
+		}
+		
+		var arr=[1,2,3];
+		foo(arr.slice());
+		console.log(arr);//[1,2,3]
+	</script>
+</html>
