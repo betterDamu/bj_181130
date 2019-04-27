@@ -1,5 +1,5 @@
-import  x from "lodash";
-console.dir(x)
+import  _ from "lodash";
+console.dir(_)
 
 
 import  damu from "damu";

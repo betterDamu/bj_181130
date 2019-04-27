@@ -17,5 +17,18 @@
             使用npm脚本    
             
 ### npm平台(第三方库)  
-    node包查找机制       
+    node包查找机制    
+    
+    1.node内建包
+    2. 自己文件的路径
+        不会主动加 ./ ../ /
+    3. 第三方包
+         module.paths[0]
+            ---> 找包名
+             ---> 找包底下的package.json
+               ---> package.json  main字段所指向的文件
+                 ---> 如果main字段不存在 直接找包名底下的index.js  index.json
+                 
+    如果再vue-cli中找包:
+        先看别名 再走 node的查找包的机制             
             

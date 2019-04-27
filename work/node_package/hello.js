@@ -1,4 +1,4 @@
-var colors = require('colors');
+var colors = require('./colors');
 console.log(colors)
 // 1. node内建包
 /*
