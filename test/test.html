@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1. 如果go函数的参数是有值的 我们应该返回一个字符串
+    // 2. 如果go函数的参数是没有值的 我们应该返回一个函数
+    //         当我们返回的这个函数被调用的时候  计算器要加1
+
+    var count =0; //计算器
+    var flag = "";
+    function go(msg){
+       if(!msg){
+           return function () {
+               count++
+           }
+       }else{
+           for(var i=0;i<count;i++){
+               flag+="o"
+           }
+           return "g"+flag+"l"
+       }
+    }
+
+    console.log(go()(),count)
+</script>
+
+</html>
