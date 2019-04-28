@@ -13,5 +13,8 @@ module.exports = {
     'sourceType': 'module'
   },
   'rules': {
+    "object-shorthand":2,
+    "prefer-arrow-callback":2,
+    "no-trailing-spaces":2
   }
 }
