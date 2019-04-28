@@ -1,0 +1,17 @@
+@import "clearfix";
+@import "reset";
+@import "mixin";
+$bg:pink;
+#app{
+  @extend .clearfix;
+  @include juzhong();
+  border: 1px solid;
+  width: 500px;
+  height: 300px;
+  #inner{
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: $bg;
+  }
+}

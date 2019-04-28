@@ -1,0 +1,33 @@
+.clearfix, #app {
+  zoom: 1;
+}
+.clearfix:after, #app:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid;
+  width: 500px;
+  height: 300px;
+}
+#app #inner {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: pink;
+}
+
+/*# sourceMappingURL=index.css.map */
