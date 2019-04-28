@@ -1,0 +1,8 @@
+.loopDiv(@num) when(@num < 10){
+   div-@{num}{
+     width: 100px * @num;
+   }
+  .loopDiv(@num + 1);
+}
+
+.loopDiv(1);
