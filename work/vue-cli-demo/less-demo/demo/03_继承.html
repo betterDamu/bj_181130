@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/less">
+       .juzhong{
+           position: absolute;
+           left: 0;
+           top: 0;
+           bottom: 0;
+           right: 0;
+           margin: auto;
+       }
+
+       #app:extend(.juzhong){
+           width: 100px;
+           height: 100px;
+           background: pink;
+           & > .inner{
+               #app2:extend(.juzhong){
+                   width: 50px;
+                   height: 50px;
+                   border: 1px solid;
+               }
+           }
+       }
+
+    </style>
+    <!--运行时编译-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="inner">
+            <div id="app2">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

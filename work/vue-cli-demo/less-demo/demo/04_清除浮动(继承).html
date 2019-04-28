@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/less">
+      /*  #app{
+            width: 400px;
+            border: 1px solid;
+        }
+        #app:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #inner{
+            float: left;
+            width: 200px;
+            height: 300px;
+            background: pink;
+        }*/
+        .clearfix{
+            zoom: 1;
+            &:after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+
+        #app{
+            &:extend(.clearfix all);
+            width: 400px;
+            border: 1px solid;
+            #inner{
+                float: left;
+                width: 200px;
+                height: 300px;
+                background: pink;
+            }
+        }
+    </style>
+    <!--运行时编译-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+</head>
+<body>
+    <div id="app">
+       <div id="inner">
+
+       </div>
+    </div>
+</body>
+
+</html>
