@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import header from "@/components/elm-header.vue"
+  import header from "@/components/header/elm-header.vue"
   export default {
     name: 'App',
     components:{
@@ -27,16 +27,20 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
+    @import "./common/mixin.styl"
     #app
       .nav
+        border-1px(rgba(7,17,27.0.1))
         display flex
+        height 40px
+        line-height 40px
+        font-size 14px
+        color rgb(77,85,93)
         &>div
           flex 1
           text-align center
-          &.seller
-            background pink
-          &.goods
-            background deeppink
-          &.ratings
-            background gray
+          a
+            display block
+            &.active
+              color rgb(240,20,20)
 </style>
