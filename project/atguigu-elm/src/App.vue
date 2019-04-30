@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <elm-header></elm-header>
+    <elm-header :seller="seller"></elm-header>
     <nav class="nav">
       <div class="seller">
         <router-link to="/seller">seller</router-link>
@@ -17,11 +17,27 @@
 </template>
 
 <script>
+  import axios from "axios"
   import header from "@/components/header/elm-header.vue"
+
+  const OK = 0;
   export default {
     name: 'App',
     components:{
       "elm-header":header
+    },
+    data(){
+      return {
+        seller:{}
+      }
+    },
+    mounted(){
+      axios.get("/api/seller").then((res)=>{
+            const sellerData = res.data;
+            if(sellerData.errno === OK){
+                this.seller = sellerData.data;
+            }
+      })
     }
   }
 </script>

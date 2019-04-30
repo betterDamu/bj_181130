@@ -1,33 +1,68 @@
 <template>
     <div class="head">
         <div class="content">
-          <img class="avatar" src="http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg">
+          <img class="avatar" :src="seller.avatar">
           <div class="info">
             <div class="title">
               <i class="brand"></i>
-              <span>粥品香坊（回龙观）</span>
+              <span>{{seller.name}}</span>
             </div>
             <div class="send">
-              <span>蜂鸟专送/38分钟送达</span>
+              <span>{{seller.description}}/{{seller.deliveryTime}}分钟送达</span>
             </div>
-            <div class="supports">
-              <i class="icon guarantee"></i>
-              <span>在线支付满100送老板</span>
+            <div class="supports" v-if="seller.supports&&seller.supports.length">
+              <i  :class="[`icon`,classMap[seller.supports[0].type]]"></i>
+              <span>{{seller.supports[0].description}}</span>
             </div>
           </div>
-          <div class="btn">
-            <span>5个</span>
+          <div class="btn" v-if="seller.supports&&seller.supports.length">
+            <span>{{seller.supports.length}}个</span>
             <i class="icon-tux"></i>
           </div>
         </div>
-        <div class="bulletin"></div>
-        <div class="bg"></div>
+        <div class="bulletin">
+          <i class="icon"></i>
+          <p class="text">{{seller.bulletin}}</p>
+          <i class="icon-tux tux"></i>
+        </div>
+        <div class="bg">
+          <img :src="seller.avatar" >
+        </div>
+        <div class="mask">
+            <div class="content-wrap">
+              <div class="content">
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+                content <br> content <br> content <br> content <br> content <br>
+              </div>
+            </div>
+            <div class="footer">
+              <i class="icon-close close"></i>
+            </div>
+        </div>
     </div>
 </template>
 
 <script type="text/ecmascript-6">
     export default {
-        name: "elm-header"
+        name: "elm-header",
+        data(){
+          return{
+            classMap:["decrease","discount","guarantee","invoice","special"]
+          }
+        },
+        props:{
+          seller:Object
+        }
     }
 </script>
 
@@ -37,7 +72,7 @@
     position relative
     background-color rgba(7,17,27,0.5)
     overflow hidden
-    .content
+    & > .content
       font-size 0
       padding 24px 0 18px 24px
       .avatar
@@ -97,7 +132,7 @@
       .btn
         position absolute
         right 10px
-        bottom 10px
+        bottom 35px
         border-radius 8px
         width 48px
         height 24px
@@ -111,7 +146,33 @@
         i
           color rgb(0,0,0)
     .bulletin
-      zoom 1
+      position relative
+      height 28px
+      line-height 28px
+      padding 0 12px 0 12px
+      background pink
+      background rgba(7,17,27,0.2)
+      .icon
+        bg-image(bulletin)
+        background-size 100% 100%
+        float left
+        width 22px
+        height 12px
+        margin-top 7px
+        margin-right 4px
+      .text
+        color rgb(255,255,255)
+        font-size 10px
+        font-weight 200
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+      .tux
+        color rgb(255,255,255)
+        font-size 10px
+        position absolute
+        right 0
+        top 7px
     .bg
       z-index -1
       position absolute
@@ -119,7 +180,33 @@
       right 0
       top 0
       bottom 0
-      background-image url("http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg")
-      background-size 90%
       filter blur(10px)
+      img
+        position absolute
+        left 0
+        top 0
+        width 100%
+        height 100%
+    .mask
+      position fixed
+      z-index 99
+      left 0
+      top 0
+      width 100%
+      height 100%
+      background rgba(7,17,27,.8)
+      overflow auto
+      .content-wrap
+        min-height 100%
+        .content
+          color white
+          font-size 12px
+          padding-bottom 64px
+          text-align center
+      .footer
+        margin-top -64px
+        text-align center
+        .close
+            color rgba(255,255,255,.5)
+            font-size 32px
 </style>

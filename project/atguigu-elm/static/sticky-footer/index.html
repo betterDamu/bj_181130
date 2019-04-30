@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+      #wrap{
+        height: 100%;
+        width: 100%;
+        background: pink;
+      }
+      .content{
+        min-height: 100%;
+      }
+      .content-main{
+        text-align: center;
+        padding-bottom: 50px;
+      }
+      .footer{
+        margin-top: -50px;
+        text-align: center;
+        background: green;
+        height: 50px;
+        line-height: 50px;
+      }
+
+      .clearfix{
+        zoom: 1;
+      }
+      .clearfix:after{
+        content: "";
+        height: 0;
+        display: block;
+        clear: both;
+      }
+    </style>
+</head>
+<body>
+  <div id="wrap">
+      <div class="content clearfix">
+          <div class="content-main clearfix">
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            <!--content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+            content-main <br> content-main <br> content-main <br> content-main <br> content-main <br>
+-->
+          </div>
+      </div>
+      <div class="footer">
+        footer
+      </div>
+  </div>
+</body>
+</html>
