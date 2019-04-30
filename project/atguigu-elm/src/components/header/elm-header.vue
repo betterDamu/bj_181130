@@ -34,6 +34,18 @@
               <div class="content">
                 <h3 class="title">{{seller.name}}</h3>
                 <elm-stars :size="48" :score="4.6" class="stars"></elm-stars>
+                <elm-title>
+                  <span class="text">优惠信息</span>
+                </elm-title>
+                <elm-list :supports="seller.supports" :classMap="classMap"></elm-list>
+                <elm-title>
+                  <span class="text">商家公告</span>
+                </elm-title>
+                <div class="text">
+                  <p>
+                    {{seller.bulletin}}
+                  </p>
+                </div>
               </div>
             </div>
             <div class="footer">
@@ -46,6 +58,9 @@
 
 <script type="text/ecmascript-6">
     import stars from "@/components/stars/stars.vue"
+    import title from "@/components/header/title/title.vue"
+    import list from "@/components/header/list/list.vue"
+
     export default {
         name: "elm-header",
         data(){
@@ -66,7 +81,9 @@
           }
         },
         components:{
-          "elm-stars":stars
+          "elm-stars":stars,
+          "elm-title":title,
+          "elm-list":list
         }
     }
 </script>
@@ -221,6 +238,17 @@
           .stars
             margin-top 16px
             margin-bottom 28px
+          & > .text
+            width 80%
+            margin 0 auto
+            margin-top 24px
+            & > p
+              padding 0 12px
+              font-size 12px
+              line-height 24px
+              color rgba(255,255,255,1)
+              font-weight 200
+              text-align left
       .footer
         margin-top -64px
         text-align center
