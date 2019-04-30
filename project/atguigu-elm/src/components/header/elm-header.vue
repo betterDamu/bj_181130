@@ -15,12 +15,12 @@
               <span>{{seller.supports[0].description}}</span>
             </div>
           </div>
-          <div class="btn" v-if="seller.supports&&seller.supports.length">
+          <div class="btn" v-if="seller.supports&&seller.supports.length" @click="showMaskFn">
             <span>{{seller.supports.length}}个</span>
             <i class="icon-tux"></i>
           </div>
         </div>
-        <div class="bulletin">
+        <div class="bulletin" @click="showMaskFn">
           <i class="icon"></i>
           <p class="text">{{seller.bulletin}}</p>
           <i class="icon-tux tux"></i>
@@ -28,46 +28,53 @@
         <div class="bg">
           <img :src="seller.avatar" >
         </div>
-        <div class="mask">
+        <transition name="mask">
+          <div class="mask" v-show="maskShow">
             <div class="content-wrap">
               <div class="content">
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
-                content <br> content <br> content <br> content <br> content <br>
+                <h3 class="title">{{seller.name}}</h3>
+                <elm-stars :size="24"></elm-stars>
               </div>
             </div>
             <div class="footer">
-              <i class="icon-close close"></i>
+              <i class="icon-close close" @click="closeMask"></i>
             </div>
-        </div>
+          </div>
+        </transition>
     </div>
 </template>
 
 <script type="text/ecmascript-6">
+    import stars from "@/components/stars/stars.vue"
     export default {
         name: "elm-header",
         data(){
           return{
-            classMap:["decrease","discount","guarantee","invoice","special"]
+            classMap:["decrease","discount","guarantee","invoice","special"],
+            maskShow:false
           }
         },
         props:{
           seller:Object
+        },
+        methods:{
+          showMaskFn(){
+            this.maskShow = true;
+          },
+          closeMask(){
+            this.maskShow = false;
+          }
+        },
+        components:{
+          "elm-stars":stars
         }
     }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/mixin.styl"
+  @import "../../common/transitions.styl"
+  @import "../../common/extend.styl"
   .head
     position relative
     background-color rgba(7,17,27,0.5)
@@ -197,12 +204,20 @@
       background rgba(7,17,27,.8)
       overflow auto
       .content-wrap
+        @extend .clearfix
         min-height 100%
         .content
+          @extend .clearfix
           color white
           font-size 12px
+          padding-top 64px
           padding-bottom 64px
           text-align center
+          .title
+            font-size 16px
+            font-weight 700
+            line-height 16px
+            color rgba(255,255,255,1)
       .footer
         margin-top -64px
         text-align center
