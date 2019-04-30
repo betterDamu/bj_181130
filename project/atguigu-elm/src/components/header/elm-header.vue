@@ -33,7 +33,7 @@
             <div class="content-wrap">
               <div class="content">
                 <h3 class="title">{{seller.name}}</h3>
-                <elm-stars :size="24"></elm-stars>
+                <elm-stars :size="48" :score="4.6" class="stars"></elm-stars>
               </div>
             </div>
             <div class="footer">
@@ -218,6 +218,9 @@
             font-weight 700
             line-height 16px
             color rgba(255,255,255,1)
+          .stars
+            margin-top 16px
+            margin-bottom 28px
       .footer
         margin-top -64px
         text-align center

@@ -1,22 +1,53 @@
 <template>
     <div class="stars" :class="starsType">
-      <span class="star on"></span>
+      <span v-for="itemClass in itemClasses" class="star" :class="itemClass"></span>
+      <!--<span class="star on"></span>
       <span class="star on"></span>
       <span class="star on"></span>
       <span class="star half"></span>
-      <span class="star off"></span>
+      <span class="star off"></span>-->
     </div>
 </template>
 
 <script type="text/ecmascript-6">
+    const LENGTH = 5;
+    const ON = "on";
+    const HALF = "half";
+    const OFF = "off";
+
     export default {
         name: "stars",
         props:{
-          size:Number
+          size:Number,
+          score:Number
         },
         computed:{
           starsType(){
             return "stars-"+this.size
+          },
+          itemClasses(){
+            let result =[];
+
+            // 4.1   [ON,ON,ON,ON.OFF]
+            // 4.6   [ON,ON,ON,ON.HALF]
+            // 3.9   [ON,ON,ON,HALF.OFF]
+
+            //  0  0.5  1  1.5  2  2.5  3  3.5  4  4.5   5
+            let score = Math.floor(this.score*2)/2;
+            let fullStarSize = Math.floor(score);
+            let hasSmallNum = score%1 !==0;
+
+            for(let i=0;i<fullStarSize;i++){
+              result.push(ON)
+            }
+            if(hasSmallNum){
+              result.push(HALF)
+            }
+            while (result.length < LENGTH){
+              result.push(OFF)
+            }
+
+            return result;
           }
         }
     }
